@@ -1,5 +1,6 @@
 from src.ingestion.loader import read_first_part
 from src.cleaning.closure_detector import detect_all_closures
+from src.cleaning.event_classifier import classify_events
 
 zip_path = (
     "data/raw/"
@@ -25,6 +26,8 @@ if result is not None:
         print(column)
 
     closures=detect_all_closures(dataframe)
+    classified_events=classify_events(closures)
+
     print("\nNumber of closures detected for all heads:")
     print(len(closures))
 
@@ -76,3 +79,9 @@ if result is not None:
 
     print("\nUnusual events:")
     print(unusual_events.head(20))
+
+    print("\nEvent types:")
+    print(classified_events["Event Type"].value_counts())
+
+    print("\nFirst classified events:")
+    print(classified_events.head(20))   
