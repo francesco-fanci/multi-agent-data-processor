@@ -1,87 +1,279 @@
-from src.ingestion.loader import read_first_part
+from src.ingestion.loader import list_csv_files, read_csv_file
 from src.cleaning.closure_detector import detect_all_closures
 from src.cleaning.event_classifier import classify_events
+from src.cleaning.data_quality import add_quality_flags
 
-zip_path = (
-    "data/raw/"
-    "telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02.zip"
-)
 
-result = read_first_part(zip_path, size=86400)
+zip_paths = [
+    "data/raw/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02.zip",
+    "data/raw/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03.zip",
+    "data/raw/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04.zip"
+]
 
-if result is not None:
-    csv_name, dataframe=result
 
-    print(f"First CSV file: {csv_name}")
+previous_counts = {}
 
-    print("\nNumber of rows in the first part:", len(dataframe))
+total_raw_events = 0
+total_clean_events = 0
 
-    print("\nFirst few rows of the dataframe:")
-    print(dataframe.head())
+total_cycles = 0
+total_production_pieces = 0
 
-    print("\nNumber of columns in the dataframe:", len(dataframe.columns))
+total_closure_ok = 0
+total_no_load = 0
+total_bad_closure = 0
 
-    print("\nColumn names in the dataframe:")
-    for column in dataframe.columns:
-        print(column)
+total_valid = 0
+total_counter_recovery = 0
+total_data_gap = 0
 
-    closures=detect_all_closures(dataframe)
-    classified_events=classify_events(closures)
+max_count_difference = 0
+events_with_difference_greater_than_one = 0
+count_difference_distribution = {}
+unknown_status_distribution = {}
+total_unknown = 0
 
-    print("\nNumber of closures detected for all heads:")
-    print(len(closures))
+first_timestamp = None
+last_timestamp = None
 
-    print("\nFirst closures detected:")
-    print(closures.head(20))
 
-    print("\nNumber of counter increments for each head:")
-    print(closures["Head"].value_counts().sort_index())
+for zip_path in zip_paths:
 
-    print("\nStatus values found:")
-    print(closures["Status"].value_counts().sort_index())
+    print("\nProcessing zip:")
+    print(zip_path)
 
-    print("\nTorque statistics for each status:")
-    print(
-        closures.groupby("Status")["AppTorque"].agg(
-            ["count", "min", "mean", "max"]
+    csv_files = list_csv_files(zip_path)
+
+    for csv_name in csv_files:
+
+        print("\nProcessing:", csv_name)
+
+        dataframe = read_csv_file(
+            zip_path,
+            csv_name
         )
+
+        closures, previous_counts = detect_all_closures(
+            dataframe,
+            previous_counts
+        )
+
+        classified_events = classify_events(closures)
+
+        classified_events = add_quality_flags(
+            classified_events
+        )
+
+        clean_events = classified_events[
+            classified_events["Data Quality"] != "Counter Recovery"
+        ]
+
+        unknown_events = clean_events[
+        clean_events["Event Type"] == "Unknown"
+    ]
+
+        for status in unknown_events["Status"]:
+            status = int(status)
+
+            if status not in unknown_status_distribution:
+                unknown_status_distribution[status] = 0
+
+            unknown_status_distribution[status] += 1
+
+        total_valid += len(
+            classified_events[
+                classified_events["Data Quality"] == "Valid"
+            ]
+        )
+
+        total_counter_recovery += len(
+            classified_events[
+                classified_events["Data Quality"] == "Counter Recovery"
+            ]
+        )
+
+        total_data_gap += len(
+            classified_events[
+                classified_events["Data Quality"] == "Data Gap"
+            ]
+        )
+
+        total_raw_events += len(classified_events)
+        total_clean_events += len(clean_events)
+
+        for difference in clean_events["Count Difference"]:
+
+            difference = int(difference)
+
+            if difference not in count_difference_distribution:
+                count_difference_distribution[difference] = 0
+
+            count_difference_distribution[difference] += 1
+
+        if len(clean_events) > 0:
+
+            current_max = clean_events["Count Difference"].max()
+
+            if current_max > max_count_difference:
+                max_count_difference = current_max
+
+            events_with_difference_greater_than_one += len(
+                clean_events[
+                    clean_events["Count Difference"] > 1
+                ]
+            )
+
+        print("Rows:", len(dataframe))
+        print("Raw events:", len(classified_events))
+        print("Clean events:", len(clean_events))
+
+        total_cycles += clean_events[
+            "Count Difference"
+        ].sum()
+
+        closure_ok = clean_events[
+            clean_events["Event Type"] == "Closure OK"
+        ]
+
+        total_closure_ok += len(closure_ok)
+
+        no_load = clean_events[
+            clean_events["Event Type"] == "No Load"
+        ]
+
+        total_no_load += len(no_load)
+
+        bad_closure = clean_events[
+            clean_events["Event Type"] == "Bad Closure"
+        ]
+
+        unknown = clean_events[
+        clean_events["Event Type"] == "Unknown"
+        ]
+
+        total_unknown += len(unknown)
+
+        total_bad_closure += len(bad_closure)
+
+        production_events = clean_events[
+        clean_events["Event Type"].isin(
+            ["Closure OK", "Bad Closure"]
+        )
+    ]
+
+        total_production_pieces += production_events[
+            "Count Difference"
+        ].sum()
+
+        if len(clean_events) > 0:
+
+            current_first = clean_events[
+                "timestamp"
+            ].iloc[0]
+
+            current_last = clean_events[
+                "timestamp"
+            ].iloc[-1]
+
+            if first_timestamp is None:
+                first_timestamp = current_first
+
+            last_timestamp = current_last
+
+
+print("\n===========================")
+print("FINAL RESULTS")
+print("===========================")
+
+print("\nRaw events:")
+print(total_raw_events)
+
+print("\nClean events:")
+print(total_clean_events)
+
+print("\nTotal counter increments:")
+print(total_cycles)
+
+print("\nClosure OK:")
+print(total_closure_ok)
+
+print("\nNo Load:")
+print(total_no_load)
+
+print("\nBad Closure:")
+print(total_bad_closure)
+
+print("\nProduction pieces:")
+print(total_production_pieces)
+
+
+print("\n===========================")
+print("DATA QUALITY")
+print("===========================")
+
+print("\nValid:")
+print(total_valid)
+
+print("\nCounter Recovery:")
+print(total_counter_recovery)
+
+print("\nData Gap:")
+print(total_data_gap)
+
+
+print("\n===========================")
+print("COUNT DIFFERENCE ANALYSIS")
+print("===========================")
+
+print("\nMaximum Count Difference:")
+print(max_count_difference)
+
+print("\nEvents with Count Difference > 1:")
+print(events_with_difference_greater_than_one)
+
+print("\nCount Difference distribution:")
+
+for difference in sorted(
+    count_difference_distribution.keys()
+)[:20]:
+
+    print(
+        difference,
+        "->",
+        count_difference_distribution[difference]
     )
 
-    normal_events = closures[
-    closures["Status"] == 0
-    ].copy()
 
-    no_load_events = closures[
-        closures["Status"] == 2
-    ].copy()
+print("\nLargest Count Difference values:")
 
-    unusual_events = closures[
-        ~closures["Status"].isin([0, 2])
-    ].copy()
+largest_differences = sorted(
+    count_difference_distribution.keys(),
+    reverse=True
+)[:20]
 
-    zero_torque_normal_events = closures[
-        (closures["Status"] == 0) &
-        (closures["AppTorque"] <= 0)
-    ].copy()
+for difference in largest_differences:
 
+    print(
+        difference,
+        "->",
+        count_difference_distribution[difference]
+    )
 
-    print("\nEvents with Status 0:")
-    print(len(normal_events))
+print("\n===========================")
+print("UNKNOWN STATUS")
+print("===========================")
 
-    print("\nEvents with Status 2:")
-    print(len(no_load_events))
+print("\nUnknown events:")
+print(sum(unknown_status_distribution.values()))
 
-    print("\nEvents with unusual status:")
-    print(len(unusual_events))
+print("\nStatus values:")
 
-    print("\nStatus 0 events with zero torque:")
-    print(len(zero_torque_normal_events))
+for status in sorted(unknown_status_distribution.keys()):
+    print(
+        status,
+        "->",
+        unknown_status_distribution[status]
+    )
 
-    print("\nUnusual events:")
-    print(unusual_events.head(20))
-
-    print("\nEvent types:")
-    print(classified_events["Event Type"].value_counts())
-
-    print("\nFirst classified events:")
-    print(classified_events.head(20))   
+print("\nUnknown:")
+print(total_unknown)
