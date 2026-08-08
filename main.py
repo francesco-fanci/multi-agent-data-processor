@@ -6,6 +6,10 @@ from src.analytics.kpi import (
     calculate_cycle_speed,
     calculate_production_speed
 )
+from src.analytics.torque import (
+    update_torque_statistics,
+    calculate_torque_results
+)
 
 zip_paths = [
     "data/raw/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02.zip",
@@ -35,6 +39,7 @@ events_with_difference_greater_than_one = 0
 count_difference_distribution = {}
 unknown_status_distribution = {}
 total_unknown = 0
+torque_stats={}
 
 first_timestamp = None
 last_timestamp = None
@@ -65,6 +70,21 @@ for zip_path in zip_paths:
 
         classified_events = add_quality_flags(
             classified_events
+        )
+
+        valid_events = classified_events[
+        classified_events["Data Quality"] == "Valid"
+    ]
+
+        torque_events = valid_events[
+            valid_events["Event Type"].isin(
+                ["Closure OK", "Bad Closure"]
+            )
+        ]
+
+        update_torque_statistics(
+            torque_stats,
+            torque_events
         )
 
         clean_events = classified_events[
@@ -184,7 +204,9 @@ for zip_path in zip_paths:
             last_timestamp = current_last
         cycle_speed=calculate_cycle_speed(total_cycles, first_timestamp, last_timestamp)
         production_speed=calculate_production_speed(total_production_pieces, first_timestamp, last_timestamp)
-
+        torque_results = calculate_torque_results(
+        torque_stats
+    )
 
 print("\n===========================")
 print("FINAL RESULTS")
@@ -294,3 +316,20 @@ for status in sorted(unknown_status_distribution.keys()):
 
 print("\nUnknown:")
 print(total_unknown)
+
+print("\n===========================")
+print("TORQUE ANALYSIS")
+print("===========================")
+
+for head in sorted(torque_results):
+    stats = torque_results[head]
+
+    print(
+        head,
+        "Events:", stats["count"],
+        "Average:", stats["average"],
+        "Min:", stats["min"],
+        "Max:", stats["max"],
+        "Zero:", stats["zero_count"],
+
+    )
