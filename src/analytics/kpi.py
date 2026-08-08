@@ -1,51 +1,25 @@
 import pandas as pd
 
-def calculate_capping_speed(events):
-    data=events.copy()
-
-    data["timestamp"]= pd.to_datetime(data["timestamp"])
-
-    data=data.sort_values("timestamp").reset_index(drop=True)
-
-    data["Cumulative Pieces"]=data["Count Difference"].cumsum()
-
-    start_time=data["timestamp"].iloc[0]
-
-    data["Elapsed Seconds"]=(data["timestamp"] - start_time).dt.total_seconds()
-
-    data["Capping Speed"] = 0.0
-
-    valid_rows=data["Elapsed Seconds"] > 0
-
-    data.loc[valid_rows, "Capping Speed"] = (data.loc[valid_rows, "Cumulative Pieces"] / data.loc[valid_rows, "Elapsed Seconds"] * 3600)
-
-    return data
-
-
+def calculate_speed(total_pieces, first_timestamp, last_timestamp):
+    if first_timestamp is None or last_timestamp is None:
+        return 0.0
     
-def calculate_production_speed(events):
-    data=events.copy()
+    first_timestamp = pd.to_datetime(first_timestamp)
+    last_timestamp = pd.to_datetime(last_timestamp)
 
-    data["timestamp"]= pd.to_datetime(data["timestamp"])
+    elapsed_seconds = (last_timestamp - first_timestamp).total_seconds()
 
-    data=data.sort_values("timestamp").reset_index(drop=True)
-
-    data["Production Pieces"]=data["Count Difference"]
-
-    data.loc[data["Event Type"] == "No Load", "Production Pieces"] = 0
-
-    data["Cumulative Production Pieces"] = ( data["Production Pieces"]).cumsum()
-
-    start_time=data["timestamp"].iloc[0]
-
-    data["Elapsed Seconds"] = (data["timestamp"] - start_time).dt.total_seconds()
-
-    data["Production Speed"] = 0.0
-
-    valid_rows=data["Elapsed Seconds"] > 0
-
-    data.loc[valid_rows, "Production Speed"] = (data.loc[valid_rows, "Cumulative Production Pieces"] / data.loc[valid_rows, "Elapsed Seconds"]* 3600)
-
-    return data
-
+    if elapsed_seconds<=0:
+        return 0.0
     
+    speed= (total_pieces / elapsed_seconds * 3600) 
+    
+    return speed
+
+
+def calculate_cycle_speed(total_cycles, first_timestamp, last_timestamp):
+    return calculate_speed(total_cycles, first_timestamp, last_timestamp)
+    
+def calculate_production_speed(total_production_pieces, first_timestamp, last_timestamp):
+    return calculate_speed(total_production_pieces, first_timestamp, last_timestamp)
+   

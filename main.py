@@ -2,7 +2,10 @@ from src.ingestion.loader import list_csv_files, read_csv_file
 from src.cleaning.closure_detector import detect_all_closures
 from src.cleaning.event_classifier import classify_events
 from src.cleaning.data_quality import add_quality_flags
-
+from src.analytics.kpi import (
+    calculate_cycle_speed,
+    calculate_production_speed
+)
 
 zip_paths = [
     "data/raw/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02.zip",
@@ -179,6 +182,8 @@ for zip_path in zip_paths:
                 first_timestamp = current_first
 
             last_timestamp = current_last
+        cycle_speed=calculate_cycle_speed(total_cycles, first_timestamp, last_timestamp)
+        production_speed=calculate_production_speed(total_production_pieces, first_timestamp, last_timestamp)
 
 
 print("\n===========================")
@@ -205,6 +210,18 @@ print(total_bad_closure)
 
 print("\nProduction pieces:")
 print(total_production_pieces)
+
+print("\nCycle speed:")
+print(cycle_speed)
+
+print("\nProduction speed:")
+print(production_speed)
+
+print("\nFirst timestamp:")
+print(first_timestamp)
+
+print("\nLast timestamp:")
+print(last_timestamp)
 
 
 print("\n===========================")
