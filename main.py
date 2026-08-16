@@ -8,7 +8,10 @@ from src.analytics.kpi import (
 )
 from src.analytics.torque import (
     update_torque_statistics,
-    calculate_torque_results
+    calculate_torque_results,
+    update_daily_torque_statistics,
+    calculate_daily_torque_results,
+    calculate_torque_moving_average
 )
 
 zip_paths = [
@@ -40,6 +43,7 @@ count_difference_distribution = {}
 unknown_status_distribution = {}
 total_unknown = 0
 torque_stats={}
+daily_torque_stats={}
 
 first_timestamp = None
 last_timestamp = None
@@ -86,6 +90,11 @@ for zip_path in zip_paths:
             torque_stats,
             torque_events
         )
+
+        update_daily_torque_statistics(
+        daily_torque_stats,
+        torque_events
+    )
 
         clean_events = classified_events[
             classified_events["Data Quality"] != "Counter Recovery"
@@ -202,11 +211,12 @@ for zip_path in zip_paths:
                 first_timestamp = current_first
 
             last_timestamp = current_last
-        cycle_speed=calculate_cycle_speed(total_cycles, first_timestamp, last_timestamp)
-        production_speed=calculate_production_speed(total_production_pieces, first_timestamp, last_timestamp)
-        torque_results = calculate_torque_results(
-        torque_stats
-    )
+cycle_speed=calculate_cycle_speed(total_cycles, first_timestamp, last_timestamp)
+production_speed=calculate_production_speed(total_production_pieces, first_timestamp, last_timestamp)
+torque_results = calculate_torque_results(torque_stats)
+daily_torque_results = calculate_daily_torque_results(daily_torque_stats)
+daily_torque_results = ( calculate_torque_moving_average( daily_torque_results))
+        
 
 print("\n===========================")
 print("FINAL RESULTS")
@@ -332,4 +342,17 @@ for head in sorted(torque_results):
         "Max:", stats["max"],
         "Zero:", stats["zero_count"],
 
+    ) 
+
+print("\n===========================")
+print("DAILY TORQUE TREND - H01")
+print("===========================")
+
+for day in daily_torque_results["H01"]:
+    print(
+        day["date"],
+        "Average:", round(day["average"], 4),
+        "Moving Average:",
+        round(day["moving_average"], 4),
+        "Events:", day["count"]
     )
