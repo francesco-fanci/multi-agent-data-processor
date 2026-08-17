@@ -23,6 +23,8 @@ from src.analytics.torque import (
     detect_torque_drift
 )
 
+from src.analytics.anomaly import (update_torque_anomalies)
+
 zip_paths = [
     "data/raw/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02.zip",
     "data/raw/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03.zip",
@@ -53,6 +55,7 @@ unknown_status_distribution = {}
 total_unknown = 0
 torque_stats={}
 daily_torque_stats={}
+anomaly_stats = {}
 
 first_timestamp = None
 last_timestamp = None
@@ -104,6 +107,9 @@ for zip_path in zip_paths:
         daily_torque_stats,
         torque_events
     )
+        update_torque_anomalies(
+            anomaly_stats,
+            torque_events)
 
         clean_events = classified_events[
             classified_events["Data Quality"] != "Counter Recovery"
@@ -348,6 +354,7 @@ for head in sorted(torque_results):
         head,
         "Events:", stats["count"],
         "Average:", stats["average"],
+        "Std:", round(stats["standard_deviation"], 4),
         "Min:", stats["min"],
         "Max:", stats["max"],
         "Zero:", stats["zero_count"],
@@ -381,3 +388,21 @@ for drift in torque_drift_results["H01"]:
         "Direction:", drift["direction"],
         "Events:", drift["events"]
     )
+
+print("\n===========================")
+print("TORQUE ANOMALIES")
+print("===========================")
+
+for head in sorted(anomaly_stats):
+
+    stats = anomaly_stats[head]
+
+    print(
+        head,
+        "Anomalies:", stats["count"],
+        "Lowest:", stats["lowest_value"],
+        "at:", stats["lowest_timestamp"],
+        "Highest:", stats["highest_value"],
+        "at:", stats["highest_timestamp"]
+    )
+

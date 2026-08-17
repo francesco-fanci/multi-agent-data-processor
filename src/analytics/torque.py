@@ -19,6 +19,7 @@ def update_torque_statistics(torque_stats, events):
             torque_stats[head] = {
                 "count": 0,
                 "sum": 0.0,
+                "sum_squares": 0.0,
                 "min": None,
                 "max": None,
                 "zero_count": 0
@@ -29,6 +30,8 @@ def update_torque_statistics(torque_stats, events):
         torque_stats[head]["sum"] += (
             torque_values.sum()
         )
+
+        torque_stats[head]["sum_squares"] += (torque_values ** 2).sum()
 
         torque_stats[head]["zero_count"] += (
             torque_values == 0
@@ -65,10 +68,23 @@ def calculate_torque_results(torque_stats):
                 torque_stats[head]["sum"]
                 / count
             )
+        
+        if count == 0:
+            standard_deviation = 0.0
+        else:
+            variance = (
+                torque_stats[head]["sum_squares"] / count
+                - average ** 2
+            )
+
+            if variance < 0:
+                variance = 0.0    
+            standard_deviation = variance ** 0.5
 
         results[head] = {
             "count": count,
             "average": average,
+            "standard_deviation": standard_deviation,
             "min": torque_stats[head]["min"],
             "max": torque_stats[head]["max"],
             "zero_count": torque_stats[head]["zero_count"]
