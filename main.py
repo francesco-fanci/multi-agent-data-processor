@@ -14,6 +14,15 @@ from src.analytics.torque import (
     calculate_torque_moving_average
 )
 
+from src.analytics.torque import (
+    update_torque_statistics,
+    calculate_torque_results,
+    update_daily_torque_statistics,
+    calculate_daily_torque_results,
+    calculate_torque_moving_average,
+    detect_torque_drift
+)
+
 zip_paths = [
     "data/raw/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02.zip",
     "data/raw/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03.zip",
@@ -216,6 +225,7 @@ production_speed=calculate_production_speed(total_production_pieces, first_times
 torque_results = calculate_torque_results(torque_stats)
 daily_torque_results = calculate_daily_torque_results(daily_torque_stats)
 daily_torque_results = ( calculate_torque_moving_average( daily_torque_results))
+torque_drift_results = detect_torque_drift(daily_torque_results)
         
 
 print("\n===========================")
@@ -355,4 +365,19 @@ for day in daily_torque_results["H01"]:
         "Moving Average:",
         round(day["moving_average"], 4),
         "Events:", day["count"]
+    )
+
+print("\n===========================")
+print("TORQUE DRIFT - H01")
+print("===========================")
+
+for drift in torque_drift_results["H01"]:
+
+    print(
+        drift["date"],
+        "Average:", round(drift["average"], 4),
+        "Baseline:", round(drift["baseline"], 4),
+        "Difference:", round(drift["difference"], 4),
+        "Direction:", drift["direction"],
+        "Events:", drift["events"]
     )

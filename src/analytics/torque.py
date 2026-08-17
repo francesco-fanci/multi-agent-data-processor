@@ -145,5 +145,56 @@ def calculate_torque_moving_average(daily_torque_results, window_days=7):
             else:
                moving_average=(total_sum/total_count)
 
-                current_day["moving_average"]= (moving_average)
+            current_day["moving_average"]= (moving_average)
     return daily_torque_results
+
+def detect_torque_drift(daily_torque_results, window_days=7, threshold=0.1, min_events=500):
+    drift_results={}
+
+    for head in daily_torque_results:
+        days=daily_torque_results[head]
+
+        drift_results[head]=[]
+
+        for current_day in days:
+            if current_day["count"]<min_events:
+                continue
+
+            current_date=current_day["date"]
+
+            start_date=(current_date - timedelta(days=window_days))
+
+            total_sum=0.0
+            total_count = 0
+
+            for day in days:
+
+                if(day["date"]>=start_date and day["date"] < current_date):
+
+                    total_sum+=(day["average"]*day["count"])
+
+                    total_count +=day["count"]
+            
+            if total_count < min_events:
+                continue
+            baseline = (total_sum / total_count)
+
+            difference = (current_day["average"] - baseline)
+
+            if abs(difference) >=threshold:
+                if difference > 0:
+                    direction = "Increase"
+                else:
+                    direction = "Decrease"
+                
+                drift_results[head].append(
+                     {
+                        "date": current_date,
+                        "average": current_day["average"],
+                        "baseline": baseline,
+                        "difference": difference,
+                        "direction": direction,
+                        "events": current_day["count"]
+                    }
+                )
+    return drift_results
