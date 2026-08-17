@@ -2,28 +2,11 @@ from src.ingestion.loader import list_csv_files, read_csv_file
 from src.cleaning.closure_detector import detect_all_closures
 from src.cleaning.event_classifier import classify_events
 from src.cleaning.data_quality import add_quality_flags
-from src.analytics.kpi import (
-    calculate_cycle_speed,
-    calculate_production_speed
-)
-from src.analytics.torque import (
-    update_torque_statistics,
-    calculate_torque_results,
-    update_daily_torque_statistics,
-    calculate_daily_torque_results,
-    calculate_torque_moving_average
-)
-
-from src.analytics.torque import (
-    update_torque_statistics,
-    calculate_torque_results,
-    update_daily_torque_statistics,
-    calculate_daily_torque_results,
-    calculate_torque_moving_average,
-    detect_torque_drift
-)
-
+from src.analytics.kpi import (calculate_cycle_speed,calculate_production_speed)
+from src.analytics.torque import (update_torque_statistics,calculate_torque_results,update_daily_torque_statistics,calculate_daily_torque_results,calculate_torque_moving_average)
+from src.analytics.torque import (update_torque_statistics,calculate_torque_results,update_daily_torque_statistics,calculate_daily_torque_results,calculate_torque_moving_average,detect_torque_drift)
 from src.analytics.anomaly import (update_torque_anomalies)
+from src.analytics.correlation import (calculate_head_correlations,calculate_head_residual_correlations,find_top_correlations)
 
 zip_paths = [
     "data/raw/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02.zip",
@@ -232,7 +215,9 @@ torque_results = calculate_torque_results(torque_stats)
 daily_torque_results = calculate_daily_torque_results(daily_torque_stats)
 daily_torque_results = ( calculate_torque_moving_average( daily_torque_results))
 torque_drift_results = detect_torque_drift(daily_torque_results)
-        
+correlation_matrix = calculate_head_correlations(daily_torque_results)       
+residual_correlation_matrix = (calculate_head_residual_correlations(daily_torque_results))
+top_residual_correlations = find_top_correlations(residual_correlation_matrix,top_n=10)
 
 print("\n===========================")
 print("FINAL RESULTS")
@@ -406,3 +391,55 @@ for head in sorted(anomaly_stats):
         "at:", stats["highest_timestamp"]
     )
 
+print("\n===========================")
+print("HEAD CORRELATIONS - H01")
+print("===========================")
+
+h01_correlations = correlation_matrix[
+    "H01"
+].drop("H01").dropna()
+
+h01_correlations = h01_correlations.sort_values(
+    ascending=False
+)
+
+for head, correlation in h01_correlations.items():
+
+    print(
+        head,
+        "Correlation:",
+        round(correlation, 4)
+    )
+
+print("\n===========================")
+print("RESIDUAL CORRELATIONS - H01")
+print("===========================")
+
+h01_residual_correlations = (
+    residual_correlation_matrix["H01"]
+    .drop("H01")
+    .dropna()
+    .sort_values(ascending=False)
+)
+
+for head, correlation in h01_residual_correlations.items():
+
+    print(
+        head,
+        "Correlation:",
+        round(correlation, 4)
+    )
+
+print("\n===========================")
+print("TOP RESIDUAL CORRELATIONS")
+print("===========================")
+
+for result in top_residual_correlations:
+
+    print(
+        result["head_1"],
+        "-",
+        result["head_2"],
+        "Correlation:",
+        round(result["correlation"], 4)
+    )
