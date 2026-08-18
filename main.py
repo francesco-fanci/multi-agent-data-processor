@@ -1,5 +1,5 @@
 from src.ingestion.loader import list_csv_files, read_csv_file
-from src.cleaning.closure_detector import detect_all_closures
+from src.cleaning.closure_detector import (detect_all_closures,detect_counter_drops)
 from src.cleaning.event_classifier import classify_events
 from src.cleaning.data_quality import add_quality_flags
 from src.analytics.kpi import (calculate_cycle_speed,calculate_production_speed)
@@ -7,6 +7,7 @@ from src.analytics.torque import (update_torque_statistics,calculate_torque_resu
 from src.analytics.anomaly import (update_torque_anomalies)
 from src.analytics.correlation import (calculate_head_correlations,calculate_head_residual_correlations,find_top_correlations)
 from src.analytics.idle import (detect_idle_periods,finalize_idle_period)
+
 
 zip_paths = [
     "data/raw/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02.zip",
@@ -16,7 +17,7 @@ zip_paths = [
 
 
 previous_counts = {}
-
+previous_timestamp = None
 total_raw_events = 0
 total_clean_events = 0
 
@@ -46,6 +47,11 @@ last_timestamp = None
 idle_state = None
 idle_periods = []
 
+total_counter_drops = 0
+largest_counter_drop = None
+counter_drops_to_zero = 0
+counter_drops_not_zero = 0
+counter_drop_timestamps = set()
 
 for zip_path in zip_paths:
 
@@ -73,11 +79,24 @@ for zip_path in zip_paths:
         idle_periods.extend(
             new_idle_periods
         )
+        
+        counter_drops = detect_counter_drops(dataframe,previous_counts)
 
-        closures, previous_counts = detect_all_closures(
-            dataframe,
-            previous_counts
-        )
+        total_counter_drops += len(counter_drops)
+
+        if len(counter_drops) > 0:
+            counter_drops_to_zero += len(counter_drops[counter_drops["Count"] == 0])
+            counter_drops_not_zero += len(counter_drops[counter_drops["Count"] != 0])
+
+            for timestamp in counter_drops["timestamp"]:
+                counter_drop_timestamps.add(timestamp)
+
+            current_largest_drop = counter_drops.loc[counter_drops["Count Difference"].idxmin()]
+
+            if largest_counter_drop is None or current_largest_drop["Count Difference"] < largest_counter_drop["Count Difference"]:
+                largest_counter_drop = current_largest_drop
+
+        (closures,previous_counts,previous_timestamp) = detect_all_closures(dataframe,previous_counts,previous_timestamp)
 
         classified_events = classify_events(closures)
 
@@ -515,3 +534,20 @@ for period in longest_idle_periods:
             2
         )
     )
+
+print("\n===========================")
+print("COUNTER DROP ANALYSIS")
+print("===========================")
+
+print("\nCounter drops:", total_counter_drops)
+print("Unique drop timestamps:", len(counter_drop_timestamps))
+print("Drops to zero:", counter_drops_to_zero)
+print("Drops to non-zero value:", counter_drops_not_zero)
+
+if largest_counter_drop is not None:
+    print("\nLargest counter drop:")
+    print("Timestamp:", largest_counter_drop["timestamp"])
+    print("Head:", largest_counter_drop["Head"])
+    print("Previous:", largest_counter_drop["Previous Count"])
+    print("Current:", largest_counter_drop["Count"])
+    print("Difference:", largest_counter_drop["Count Difference"])
