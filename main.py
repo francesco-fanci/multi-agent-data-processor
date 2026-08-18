@@ -8,7 +8,7 @@ from src.analytics.anomaly import (update_torque_anomalies)
 from src.analytics.correlation import (calculate_head_correlations,calculate_head_residual_correlations,find_top_correlations)
 from src.analytics.idle import (detect_idle_periods,finalize_idle_period)
 from src.ingestion.validation import validate_dataframe
-
+from src.config import (ANOMALY_IQR_MULTIPLIER,ANOMALY_MINIMUM_MARGIN,ANOMALY_MIN_EVENTS,DRIFT_WINDOW_DAYS,DRIFT_THRESHOLD,DRIFT_MIN_EVENTS,CORRELATION_MIN_EVENTS,CORRELATION_MIN_DAYS,IDLE_MIN_DURATION_SECONDS,IDLE_MAX_GAP_SECONDS,MOVING_AVERAGE_WINDOW_DAYS,COUNTER_RECOVERY_THRESHOLD,DATA_GAP_THRESHOLD_SECONDS)
 
 zip_paths = [
     "data/raw/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02.zip",
@@ -83,7 +83,9 @@ for zip_path in zip_paths:
         new_idle_periods, idle_state = (
             detect_idle_periods(
                 dataframe,
-                idle_state
+                idle_state, 
+                min_duration_seconds=IDLE_MIN_DURATION_SECONDS,
+                max_gap_seconds=IDLE_MAX_GAP_SECONDS
             )
         )
 
@@ -112,7 +114,9 @@ for zip_path in zip_paths:
         classified_events = classify_events(closures)
 
         classified_events = add_quality_flags(
-            classified_events
+            classified_events,
+            counter_recovery_threshold=COUNTER_RECOVERY_THRESHOLD,
+            data_gap_threshold_seconds=DATA_GAP_THRESHOLD_SECONDS
         )
 
         valid_events = classified_events[
@@ -136,7 +140,10 @@ for zip_path in zip_paths:
     )
         update_torque_anomalies(
             anomaly_stats,
-            torque_events)
+            torque_events,
+            iqr_multiplier=ANOMALY_IQR_MULTIPLIER,
+            minimum_margin=ANOMALY_MINIMUM_MARGIN,
+            min_events=ANOMALY_MIN_EVENTS)
 
         clean_events = classified_events[
             classified_events["Data Quality"] != "Counter Recovery"
@@ -257,12 +264,12 @@ cycle_speed=calculate_cycle_speed(total_cycles, first_timestamp, last_timestamp)
 production_speed=calculate_production_speed(total_production_pieces, first_timestamp, last_timestamp)
 torque_results = calculate_torque_results(torque_stats)
 daily_torque_results = calculate_daily_torque_results(daily_torque_stats)
-daily_torque_results = ( calculate_torque_moving_average( daily_torque_results))
-torque_drift_results = detect_torque_drift(daily_torque_results)
-correlation_matrix = calculate_head_correlations(daily_torque_results)       
-residual_correlation_matrix = (calculate_head_residual_correlations(daily_torque_results))
+daily_torque_results = calculate_torque_moving_average(daily_torque_results, window_days=MOVING_AVERAGE_WINDOW_DAYS)
+torque_drift_results = detect_torque_drift(daily_torque_results, window_days=DRIFT_WINDOW_DAYS, threshold=DRIFT_THRESHOLD, min_events=DRIFT_MIN_EVENTS)
+correlation_matrix = calculate_head_correlations(daily_torque_results, min_events=CORRELATION_MIN_EVENTS, min_days=CORRELATION_MIN_DAYS)       
+residual_correlation_matrix = (calculate_head_residual_correlations(daily_torque_results, min_events=CORRELATION_MIN_EVENTS, min_days=CORRELATION_MIN_DAYS))
 top_residual_correlations = find_top_correlations(residual_correlation_matrix,top_n=10)
-final_idle_periods = finalize_idle_period(idle_state)
+final_idle_periods = finalize_idle_period(idle_state, min_duration_seconds=IDLE_MIN_DURATION_SECONDS)
 idle_periods.extend(final_idle_periods)
 
 total_idle_seconds = 0
