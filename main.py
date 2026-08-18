@@ -3,10 +3,10 @@ from src.cleaning.closure_detector import detect_all_closures
 from src.cleaning.event_classifier import classify_events
 from src.cleaning.data_quality import add_quality_flags
 from src.analytics.kpi import (calculate_cycle_speed,calculate_production_speed)
-from src.analytics.torque import (update_torque_statistics,calculate_torque_results,update_daily_torque_statistics,calculate_daily_torque_results,calculate_torque_moving_average)
 from src.analytics.torque import (update_torque_statistics,calculate_torque_results,update_daily_torque_statistics,calculate_daily_torque_results,calculate_torque_moving_average,detect_torque_drift)
 from src.analytics.anomaly import (update_torque_anomalies)
 from src.analytics.correlation import (calculate_head_correlations,calculate_head_residual_correlations,find_top_correlations)
+from src.analytics.idle import (detect_idle_periods,finalize_idle_period)
 
 zip_paths = [
     "data/raw/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02.zip",
@@ -43,6 +43,9 @@ anomaly_stats = {}
 first_timestamp = None
 last_timestamp = None
 
+idle_state = None
+idle_periods = []
+
 
 for zip_path in zip_paths:
 
@@ -58,6 +61,17 @@ for zip_path in zip_paths:
         dataframe = read_csv_file(
             zip_path,
             csv_name
+        )
+
+        new_idle_periods, idle_state = (
+            detect_idle_periods(
+                dataframe,
+                idle_state
+            )
+        )
+
+        idle_periods.extend(
+            new_idle_periods
         )
 
         closures, previous_counts = detect_all_closures(
@@ -218,6 +232,20 @@ torque_drift_results = detect_torque_drift(daily_torque_results)
 correlation_matrix = calculate_head_correlations(daily_torque_results)       
 residual_correlation_matrix = (calculate_head_residual_correlations(daily_torque_results))
 top_residual_correlations = find_top_correlations(residual_correlation_matrix,top_n=10)
+final_idle_periods = finalize_idle_period(idle_state)
+idle_periods.extend(final_idle_periods)
+
+total_idle_seconds = 0
+longest_idle = None
+
+for period in idle_periods:
+
+    total_idle_seconds += (period["duration_seconds"])
+
+    if (longest_idle is None or period["duration_seconds"] > longest_idle["duration_seconds"]):
+        longest_idle = period
+
+longest_idle_periods = sorted(idle_periods,key=lambda period: period["duration_seconds"],reverse=True)[:10]
 
 print("\n===========================")
 print("FINAL RESULTS")
@@ -442,4 +470,48 @@ for result in top_residual_correlations:
         result["head_2"],
         "Correlation:",
         round(result["correlation"], 4)
+    )
+
+print("\n===========================")
+print("IDLE ANALYSIS")
+print("===========================")
+
+print("\nIdle periods:")
+print(len(idle_periods))
+
+print("\nTotal idle hours:")
+print(
+    round(
+        total_idle_seconds / 3600,
+        2
+    )
+)
+
+if longest_idle is not None:
+
+    print("\nLongest idle period:")
+    print("Start:", longest_idle["start"])
+    print("End:", longest_idle["end"])
+    print(
+        "Duration minutes:",
+        round(
+            longest_idle["duration_seconds"] / 60,
+            2
+        )
+    )
+
+print("\nTop 10 longest idle periods:")
+
+for period in longest_idle_periods:
+
+    print(
+        "Start:",
+        period["start"],
+        "End:",
+        period["end"],
+        "Minutes:",
+        round(
+            period["duration_seconds"] / 60,
+            2
+        )
     )
