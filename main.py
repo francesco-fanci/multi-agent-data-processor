@@ -1,4 +1,4 @@
-from src.ingestion.loader import list_csv_files, read_csv_file
+from src.ingestion.loader import list_data_files, read_data_file
 from src.cleaning.closure_detector import (detect_all_closures,detect_counter_drops)
 from src.cleaning.event_classifier import classify_events
 from src.cleaning.data_quality import add_quality_flags
@@ -7,6 +7,7 @@ from src.analytics.torque import (update_torque_statistics,calculate_torque_resu
 from src.analytics.anomaly import (update_torque_anomalies)
 from src.analytics.correlation import (calculate_head_correlations,calculate_head_residual_correlations,find_top_correlations)
 from src.analytics.idle import (detect_idle_periods,finalize_idle_period)
+from src.ingestion.validation import validate_dataframe
 
 
 zip_paths = [
@@ -58,16 +59,26 @@ for zip_path in zip_paths:
     print("\nProcessing zip:")
     print(zip_path)
 
-    csv_files = list_csv_files(zip_path)
+    data_files = list_data_files(zip_path)
 
-    for csv_name in csv_files:
+    for filename in data_files:
 
-        print("\nProcessing:", csv_name)
+        print("\nProcessing:", filename)
 
-        dataframe = read_csv_file(
+        dataframe = read_data_file(
             zip_path,
-            csv_name
+            filename
         )
+
+        validation_problems = validate_dataframe(
+            dataframe
+            )
+
+        if len(validation_problems) > 0:
+            print("Validation warnings:")
+
+            for problem in validation_problems:
+                print("-", problem)
 
         new_idle_periods, idle_state = (
             detect_idle_periods(

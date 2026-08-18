@@ -1,39 +1,52 @@
-import zipfile 
+import io
+import zipfile
 import pandas as pd
 
-def list_csv_files(zip_path):
-    csv_files=[]
 
-    with zipfile.ZipFile(zip_path, "r") as zip_ref:
-        for filename in zip_ref.namelist():
-            if filename.lower().endswith(".csv"):
-                csv_files.append(filename)
-
-    csv_files.sort()
-    return csv_files
+SUPPORTED_EXTENSIONS = (
+    ".csv",
+    ".json",
+    ".parquet"
+)
 
 
-def read_first_part(zip_path, size=10000):
+def list_data_files(zip_path):
+    data_files = []
 
-    csv_files=list_csv_files(zip_path)
-
-    if len(csv_files)==0:
-        print("No csv files found ")
-        return None
-
-    first_csv=csv_files[0]
-
-    with zipfile.ZipFile(zip_path, "r") as zip_ref:
-        with zip_ref.open(first_csv) as csv_file:
-
-            reader=pd.read_csv(csv_file, chunksize=size)
-            first_part=next(reader)
-    return first_csv, first_part
-
-def read_csv_file(zip_path, csv_name):
     with zipfile.ZipFile(zip_path, "r") as archive:
-        with archive.open(csv_name) as csv_file:
-            dataframe=pd.read_csv(csv_file)
-    return dataframe
+        for filename in archive.namelist():
 
-    
+            if filename.lower().endswith(
+                SUPPORTED_EXTENSIONS
+            ):
+                data_files.append(filename)
+
+    data_files.sort()
+
+    return data_files
+
+
+def read_data_file(zip_path, filename):
+
+    with zipfile.ZipFile(zip_path, "r") as archive:
+        file_content = archive.read(filename)
+
+    file_buffer = io.BytesIO(file_content)
+
+    lower_filename = filename.lower()
+
+    if lower_filename.endswith(".csv"):
+        dataframe = pd.read_csv(file_buffer)
+
+    elif lower_filename.endswith(".json"):
+        dataframe = pd.read_json(file_buffer)
+
+    elif lower_filename.endswith(".parquet"):
+        dataframe = pd.read_parquet(file_buffer)
+
+    else:
+        raise ValueError(
+            "Unsupported file format: " + filename
+        )
+
+    return dataframe
