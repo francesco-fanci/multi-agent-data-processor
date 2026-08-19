@@ -1,3 +1,5 @@
+import argparse
+import os
 from src.ingestion.loader import list_data_files, read_data_file
 from src.cleaning.closure_detector import (detect_all_closures,detect_counter_drops)
 from src.cleaning.event_classifier import classify_events
@@ -12,12 +14,25 @@ from src.config import (ANOMALY_IQR_MULTIPLIER,ANOMALY_MINIMUM_MARGIN,ANOMALY_MI
 from src.logging_config import setup_logger
 
 logger = setup_logger()
+parser = argparse.ArgumentParser(description="Industrial IoT data processing pipeline")
 
-zip_paths = [
-    "data/raw/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02.zip",
-    "data/raw/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03.zip",
-    "data/raw/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04.zip"
-]
+parser.add_argument("--input",default="data/raw",help="Folder containing input ZIP files")
+
+args = parser.parse_args()
+
+zip_paths = []
+
+for filename in os.listdir(args.input):
+
+    if filename.lower().endswith(".zip"):
+        zip_paths.append(
+            os.path.join(
+                args.input,
+                filename
+            )
+        )
+
+zip_paths.sort()
 
 
 previous_counts = {}
