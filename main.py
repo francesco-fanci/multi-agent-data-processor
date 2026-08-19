@@ -9,6 +9,9 @@ from src.analytics.correlation import (calculate_head_correlations,calculate_hea
 from src.analytics.idle import (detect_idle_periods,finalize_idle_period)
 from src.ingestion.validation import validate_dataframe
 from src.config import (ANOMALY_IQR_MULTIPLIER,ANOMALY_MINIMUM_MARGIN,ANOMALY_MIN_EVENTS,DRIFT_WINDOW_DAYS,DRIFT_THRESHOLD,DRIFT_MIN_EVENTS,CORRELATION_MIN_EVENTS,CORRELATION_MIN_DAYS,IDLE_MIN_DURATION_SECONDS,IDLE_MAX_GAP_SECONDS,MOVING_AVERAGE_WINDOW_DAYS,COUNTER_RECOVERY_THRESHOLD,DATA_GAP_THRESHOLD_SECONDS)
+from src.logging_config import setup_logger
+
+logger = setup_logger()
 
 zip_paths = [
     "data/raw/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02.zip",
@@ -54,31 +57,49 @@ counter_drops_to_zero = 0
 counter_drops_not_zero = 0
 counter_drop_timestamps = set()
 
+logger.info("Pipeline started")
+
 for zip_path in zip_paths:
 
-    print("\nProcessing zip:")
-    print(zip_path)
+    logger.info("Processing zip: %s", zip_path)
 
     data_files = list_data_files(zip_path)
 
     for filename in data_files:
 
-        print("\nProcessing:", filename)
+        logger.info("Processing file: %s", filename)
 
-        dataframe = read_data_file(
-            zip_path,
-            filename
-        )
-
-        validation_problems = validate_dataframe(
-            dataframe
+        try:
+            dataframe = read_data_file(
+                zip_path,
+                filename
             )
 
+        except Exception as error:
+            logger.error(
+                "Unable to read %s - %s",
+                filename,
+                error
+            )
+            continue
+
+        try:
+            validation_problems = validate_dataframe(
+                dataframe
+            )
+
+        except Exception as error:
+            logger.error(
+                "Validation failed for %s - %s",
+                filename,
+                error
+            )
+            continue
+
         if len(validation_problems) > 0:
-            print("Validation warnings:")
 
             for problem in validation_problems:
-                print("-", problem)
+                logger.warning("%s - %s",filename,problem)
 
         new_idle_periods, idle_state = (
             detect_idle_periods(
@@ -204,9 +225,7 @@ for zip_path in zip_paths:
                 ]
             )
 
-        print("Rows:", len(dataframe))
-        print("Raw events:", len(classified_events))
-        print("Clean events:", len(clean_events))
+        logger.info("%s - Rows: %d | Raw events: %d | Clean events: %d",filename,len(dataframe),len(classified_events),len(clean_events))
 
         total_cycles += clean_events[
             "Count Difference"
@@ -569,3 +588,4 @@ if largest_counter_drop is not None:
     print("Previous:", largest_counter_drop["Previous Count"])
     print("Current:", largest_counter_drop["Count"])
     print("Difference:", largest_counter_drop["Count Difference"])
+logger.info("Pipeline completed successfully")
