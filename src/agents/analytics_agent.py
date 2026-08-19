@@ -1,0 +1,368 @@
+import pandas as pd
+
+from src.agents.base_agent import BaseAgent
+
+from src.analytics.kpi import (
+    calculate_cycle_speed,
+    calculate_production_speed
+)
+
+from src.analytics.torque import (
+    update_torque_statistics,
+    update_daily_torque_statistics,
+    calculate_torque_results,
+    calculate_daily_torque_results,
+    calculate_torque_moving_average,
+    detect_torque_drift
+)
+
+from src.analytics.anomaly import (
+    update_torque_anomalies
+)
+
+from src.analytics.idle import (
+    detect_idle_periods,
+    finalize_idle_period
+)
+
+from src.analytics.correlation import (
+    calculate_head_correlations,
+    calculate_head_residual_correlations,
+    find_top_correlations
+)
+
+from src.config import (
+    ANOMALY_IQR_MULTIPLIER,
+    ANOMALY_MINIMUM_MARGIN,
+    ANOMALY_MIN_EVENTS,
+    IDLE_MIN_DURATION_SECONDS,
+    IDLE_MAX_GAP_SECONDS,
+    MOVING_AVERAGE_WINDOW_DAYS,
+    DRIFT_WINDOW_DAYS,
+    DRIFT_THRESHOLD,
+    DRIFT_MIN_EVENTS,
+    CORRELATION_MIN_EVENTS,
+    CORRELATION_MIN_DAYS
+)
+
+class AnalyticsAgent(BaseAgent):
+
+    def __init__(self):
+        super().__init__(
+            name="Analytics Agent",
+            goal="Compute industrial telemetry analytics and KPIs"
+        )
+
+    def run(self, context):
+
+        required_keys = [
+            "dataframe",
+            "events",
+            "clean_events"
+        ]
+
+        for key in required_keys:
+            if key not in context:
+                raise ValueError(
+                    "Missing " + key + " in context"
+                )
+
+        dataframe = context["dataframe"]
+        events = context["events"]
+        clean_events = context["clean_events"]
+
+        torque_stats = context.get(
+            "torque_stats",
+            {}
+        )
+
+        daily_torque_stats = context.get(
+            "daily_torque_stats",
+            {}
+        )
+
+        anomaly_stats = context.get(
+            "anomaly_stats",
+            {}
+        )
+
+        idle_state = context.get(
+            "idle_state"
+        )
+
+        idle_periods = context.get(
+            "idle_periods",
+            []
+        )
+
+        total_cycles = context.get(
+            "total_cycles",
+            0
+        )
+
+        total_production_pieces = context.get(
+            "total_production_pieces",
+            0
+        )
+
+        first_timestamp = context.get(
+            "first_timestamp"
+        )
+
+        last_timestamp = context.get(
+            "last_timestamp"
+        )
+
+        valid_events = events[
+            events["Data Quality"] == "Valid"
+        ].copy()
+
+        torque_events = valid_events[
+            valid_events["Event Type"].isin([
+                "Closure OK",
+                "Bad Closure"
+            ])
+        ].copy()
+
+        update_torque_statistics(
+            torque_stats,
+            torque_events
+        )
+
+        update_daily_torque_statistics(
+            daily_torque_stats,
+            torque_events
+        )
+
+        update_torque_anomalies(
+            anomaly_stats,
+            torque_events,
+            iqr_multiplier=(
+                ANOMALY_IQR_MULTIPLIER
+            ),
+            minimum_margin=(
+                ANOMALY_MINIMUM_MARGIN
+            ),
+            min_events=(
+                ANOMALY_MIN_EVENTS
+            )
+        )
+
+        new_idle_periods, idle_state = (
+            detect_idle_periods(
+                dataframe,
+                idle_state=idle_state,
+                min_duration_seconds=(
+                    IDLE_MIN_DURATION_SECONDS
+                ),
+                max_gap_seconds=(
+                    IDLE_MAX_GAP_SECONDS
+                )
+            )
+        )
+
+        idle_periods = (
+            idle_periods
+            + new_idle_periods
+        )
+
+        total_cycles += (
+            clean_events[
+                "Count Difference"
+            ].sum()
+        )
+
+        production_events = clean_events[
+            clean_events["Event Type"].isin([
+                "Closure OK",
+                "Bad Closure"
+            ])
+        ]
+
+        total_production_pieces += (
+            production_events[
+                "Count Difference"
+            ].sum()
+        )
+
+        if len(clean_events) > 0:
+
+            current_first = pd.to_datetime(
+                clean_events["timestamp"].min()
+            )
+
+            current_last = pd.to_datetime(
+                clean_events["timestamp"].max()
+            )
+
+            if (
+                first_timestamp is None
+                or current_first
+                < pd.to_datetime(first_timestamp)
+            ):
+                first_timestamp = current_first
+
+            if (
+                last_timestamp is None
+                or current_last
+                > pd.to_datetime(last_timestamp)
+            ):
+                last_timestamp = current_last
+
+        cycle_speed = calculate_cycle_speed(
+            total_cycles,
+            first_timestamp,
+            last_timestamp
+        )
+
+        production_speed = (
+            calculate_production_speed(
+                total_production_pieces,
+                first_timestamp,
+                last_timestamp
+            )
+        )
+
+        result = context.copy()
+
+        result["torque_stats"] = torque_stats
+        result["daily_torque_stats"] = (
+            daily_torque_stats
+        )
+        result["anomaly_stats"] = anomaly_stats
+
+        result["idle_state"] = idle_state
+        result["idle_periods"] = idle_periods
+
+        result["total_cycles"] = total_cycles
+        result["total_production_pieces"] = (
+            total_production_pieces
+        )
+
+        result["first_timestamp"] = (
+            first_timestamp
+        )
+        result["last_timestamp"] = (
+            last_timestamp
+        )
+
+        result["cycle_speed"] = cycle_speed
+        result["production_speed"] = (
+            production_speed
+        )
+
+        return result
+    
+    def finalize(self, context):
+
+        torque_results = calculate_torque_results(
+            context.get(
+                "torque_stats",
+                {}
+            )
+        )
+
+        daily_torque_results = (
+            calculate_daily_torque_results(
+                context.get(
+                    "daily_torque_stats",
+                    {}
+                )
+            )
+        )
+
+        daily_torque_results = (
+            calculate_torque_moving_average(
+                daily_torque_results,
+                window_days=(
+                    MOVING_AVERAGE_WINDOW_DAYS
+                )
+            )
+        )
+
+        drift_results = detect_torque_drift(
+            daily_torque_results,
+            window_days=DRIFT_WINDOW_DAYS,
+            threshold=DRIFT_THRESHOLD,
+            min_events=DRIFT_MIN_EVENTS
+        )
+
+        correlation_matrix = (
+            calculate_head_correlations(
+                daily_torque_results,
+                min_events=CORRELATION_MIN_EVENTS,
+                min_days=CORRELATION_MIN_DAYS
+            )
+        )
+
+        residual_correlation_matrix = (
+            calculate_head_residual_correlations(
+                daily_torque_results,
+                min_events=CORRELATION_MIN_EVENTS,
+                min_days=CORRELATION_MIN_DAYS
+            )
+        )
+
+        top_correlations = find_top_correlations(
+            correlation_matrix
+        )
+
+        top_residual_correlations = (
+            find_top_correlations(
+                residual_correlation_matrix
+            )
+        )
+
+        idle_periods = context.get(
+            "idle_periods",
+            []
+        ).copy()
+
+        idle_state = context.get(
+            "idle_state"
+        )
+
+        if idle_state is not None:
+
+            idle_periods += finalize_idle_period(
+                idle_state,
+                min_duration_seconds=(
+                    IDLE_MIN_DURATION_SECONDS
+                )
+            )
+
+        result = context.copy()
+
+        result["torque_results"] = (
+            torque_results
+        )
+
+        result["daily_torque_results"] = (
+            daily_torque_results
+        )
+
+        result["drift_results"] = (
+            drift_results
+        )
+
+        result["correlation_matrix"] = (
+            correlation_matrix
+        )
+
+        result[
+            "residual_correlation_matrix"
+        ] = residual_correlation_matrix
+
+        result["top_correlations"] = (
+            top_correlations
+        )
+
+        result[
+            "top_residual_correlations"
+        ] = top_residual_correlations
+
+        result["idle_periods"] = (
+            idle_periods
+        )
+
+        return result
