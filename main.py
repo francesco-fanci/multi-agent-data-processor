@@ -1,24 +1,29 @@
 import argparse
 import os
-from src.ingestion.loader import list_data_files, read_data_file
-from src.cleaning.closure_detector import (detect_all_closures,detect_counter_drops)
-from src.cleaning.event_classifier import classify_events
-from src.cleaning.data_quality import add_quality_flags
-from src.analytics.kpi import (calculate_cycle_speed,calculate_production_speed)
-from src.analytics.torque import (update_torque_statistics,calculate_torque_results,update_daily_torque_statistics,calculate_daily_torque_results,calculate_torque_moving_average,detect_torque_drift)
-from src.analytics.anomaly import (update_torque_anomalies)
-from src.analytics.correlation import (calculate_head_correlations,calculate_head_residual_correlations,find_top_correlations)
-from src.analytics.idle import (detect_idle_periods,finalize_idle_period)
-from src.ingestion.validation import validate_dataframe
-from src.config import (ANOMALY_IQR_MULTIPLIER,ANOMALY_MINIMUM_MARGIN,ANOMALY_MIN_EVENTS,DRIFT_WINDOW_DAYS,DRIFT_THRESHOLD,DRIFT_MIN_EVENTS,CORRELATION_MIN_EVENTS,CORRELATION_MIN_DAYS,IDLE_MIN_DURATION_SECONDS,IDLE_MAX_GAP_SECONDS,MOVING_AVERAGE_WINDOW_DAYS,COUNTER_RECOVERY_THRESHOLD,DATA_GAP_THRESHOLD_SECONDS)
+
+from src.ingestion.loader import list_data_files
 from src.logging_config import setup_logger
+from src.agents.coordinator import MultiAgentCoordinator
 
 logger = setup_logger()
-parser = argparse.ArgumentParser(description="Industrial IoT data processing pipeline")
+coordinator = MultiAgentCoordinator()
 
-parser.add_argument("--input",default="data/raw",help="Folder containing input ZIP files")
+parser = argparse.ArgumentParser(
+    description="Industrial IoT data processing pipeline"
+)
+
+parser.add_argument(
+    "--input",
+    default="data/raw",
+    help="Folder containing input ZIP files"
+)
 
 args = parser.parse_args()
+
+if not os.path.isdir(args.input):
+    parser.error(
+        f"Input folder does not exist: {args.input}"
+    )
 
 zip_paths = []
 
@@ -34,18 +39,28 @@ for filename in os.listdir(args.input):
 
 zip_paths.sort()
 
+if len(zip_paths) == 0:
+    parser.error(
+        f"No ZIP files found in input folder: {args.input}"
+    )
 
-previous_counts = {}
-previous_timestamp = None
+
+context = {
+    "torque_stats": {},
+    "daily_torque_stats": {},
+    "anomaly_stats": {},
+    "idle_periods": [],
+    "total_cycles": 0,
+    "total_production_pieces": 0
+}
+
 total_raw_events = 0
 total_clean_events = 0
-
-total_cycles = 0
-total_production_pieces = 0
 
 total_closure_ok = 0
 total_no_load = 0
 total_bad_closure = 0
+total_unknown = 0
 
 total_valid = 0
 total_counter_recovery = 0
@@ -55,16 +70,6 @@ max_count_difference = 0
 events_with_difference_greater_than_one = 0
 count_difference_distribution = {}
 unknown_status_distribution = {}
-total_unknown = 0
-torque_stats={}
-daily_torque_stats={}
-anomaly_stats = {}
-
-first_timestamp = None
-last_timestamp = None
-
-idle_state = None
-idle_periods = []
 
 total_counter_drops = 0
 largest_counter_drop = None
@@ -72,251 +77,341 @@ counter_drops_to_zero = 0
 counter_drops_not_zero = 0
 counter_drop_timestamps = set()
 
+
 logger.info("Pipeline started")
+
 
 for zip_path in zip_paths:
 
-    logger.info("Processing zip: %s", zip_path)
+    logger.info(
+        "Processing zip: %s",
+        zip_path
+    )
 
-    data_files = list_data_files(zip_path)
+    data_files = list_data_files(
+        zip_path
+    )
 
     for filename in data_files:
 
-        logger.info("Processing file: %s", filename)
+        logger.info(
+            "Processing file: %s",
+            filename
+        )
 
         try:
-            dataframe = read_data_file(
+            context = coordinator.process_file(
                 zip_path,
-                filename
+                filename,
+                context
             )
 
         except Exception as error:
             logger.error(
-                "Unable to read %s - %s",
+                "Unable to process %s - %s",
                 filename,
                 error
             )
             continue
 
-        try:
-            validation_problems = validate_dataframe(
-                dataframe
-            )
+        dataframe = context["dataframe"]
 
-        except Exception as error:
-            logger.error(
-                "Validation failed for %s - %s",
+        validation_problems = context[
+            "validation_problems"
+        ]
+
+        classified_events = context[
+            "events"
+        ]
+
+        clean_events = context[
+            "clean_events"
+        ]
+
+        counter_drops = context[
+            "counter_drops"
+        ]
+
+        for problem in validation_problems:
+            logger.warning(
+                "%s - %s",
                 filename,
-                error
+                problem
             )
-            continue
 
-        if len(validation_problems) > 0:
-
-            for problem in validation_problems:
-                logger.warning("%s - %s",filename,problem)
-
-        new_idle_periods, idle_state = (
-            detect_idle_periods(
-                dataframe,
-                idle_state, 
-                min_duration_seconds=IDLE_MIN_DURATION_SECONDS,
-                max_gap_seconds=IDLE_MAX_GAP_SECONDS
-            )
+        total_counter_drops += len(
+            counter_drops
         )
-
-        idle_periods.extend(
-            new_idle_periods
-        )
-        
-        counter_drops = detect_counter_drops(dataframe,previous_counts)
-
-        total_counter_drops += len(counter_drops)
 
         if len(counter_drops) > 0:
-            counter_drops_to_zero += len(counter_drops[counter_drops["Count"] == 0])
-            counter_drops_not_zero += len(counter_drops[counter_drops["Count"] != 0])
 
-            for timestamp in counter_drops["timestamp"]:
-                counter_drop_timestamps.add(timestamp)
-
-            current_largest_drop = counter_drops.loc[counter_drops["Count Difference"].idxmin()]
-
-            if largest_counter_drop is None or current_largest_drop["Count Difference"] < largest_counter_drop["Count Difference"]:
-                largest_counter_drop = current_largest_drop
-
-        (closures,previous_counts,previous_timestamp) = detect_all_closures(dataframe,previous_counts,previous_timestamp)
-
-        classified_events = classify_events(closures)
-
-        classified_events = add_quality_flags(
-            classified_events,
-            counter_recovery_threshold=COUNTER_RECOVERY_THRESHOLD,
-            data_gap_threshold_seconds=DATA_GAP_THRESHOLD_SECONDS
-        )
-
-        valid_events = classified_events[
-        classified_events["Data Quality"] == "Valid"
-    ]
-
-        torque_events = valid_events[
-            valid_events["Event Type"].isin(
-                ["Closure OK", "Bad Closure"]
+            counter_drops_to_zero += len(
+                counter_drops[
+                    counter_drops["Count"] == 0
+                ]
             )
-        ]
 
-        update_torque_statistics(
-            torque_stats,
-            torque_events
-        )
+            counter_drops_not_zero += len(
+                counter_drops[
+                    counter_drops["Count"] != 0
+                ]
+            )
 
-        update_daily_torque_statistics(
-        daily_torque_stats,
-        torque_events
-    )
-        update_torque_anomalies(
-            anomaly_stats,
-            torque_events,
-            iqr_multiplier=ANOMALY_IQR_MULTIPLIER,
-            minimum_margin=ANOMALY_MINIMUM_MARGIN,
-            min_events=ANOMALY_MIN_EVENTS)
+            for timestamp in counter_drops[
+                "timestamp"
+            ]:
+                counter_drop_timestamps.add(
+                    timestamp
+                )
 
-        clean_events = classified_events[
-            classified_events["Data Quality"] != "Counter Recovery"
-        ]
+            current_largest_drop = (
+                counter_drops.loc[
+                    counter_drops[
+                        "Count Difference"
+                    ].idxmin()
+                ]
+            )
+
+            if (
+                largest_counter_drop is None
+                or current_largest_drop[
+                    "Count Difference"
+                ]
+                < largest_counter_drop[
+                    "Count Difference"
+                ]
+            ):
+                largest_counter_drop = (
+                    current_largest_drop
+                )
 
         unknown_events = clean_events[
-        clean_events["Event Type"] == "Unknown"
-    ]
+            clean_events["Event Type"]
+            == "Unknown"
+        ]
 
-        for status in unknown_events["Status"]:
+        for status in unknown_events[
+            "Status"
+        ]:
+
             status = int(status)
 
-            if status not in unknown_status_distribution:
-                unknown_status_distribution[status] = 0
+            if (
+                status
+                not in unknown_status_distribution
+            ):
+                unknown_status_distribution[
+                    status
+                ] = 0
 
-            unknown_status_distribution[status] += 1
+            unknown_status_distribution[
+                status
+            ] += 1
 
         total_valid += len(
             classified_events[
-                classified_events["Data Quality"] == "Valid"
+                classified_events[
+                    "Data Quality"
+                ] == "Valid"
             ]
         )
 
         total_counter_recovery += len(
             classified_events[
-                classified_events["Data Quality"] == "Counter Recovery"
+                classified_events[
+                    "Data Quality"
+                ] == "Counter Recovery"
             ]
         )
 
         total_data_gap += len(
             classified_events[
-                classified_events["Data Quality"] == "Data Gap"
+                classified_events[
+                    "Data Quality"
+                ] == "Data Gap"
             ]
         )
 
-        total_raw_events += len(classified_events)
-        total_clean_events += len(clean_events)
+        total_raw_events += len(
+            classified_events
+        )
 
-        for difference in clean_events["Count Difference"]:
+        total_clean_events += len(
+            clean_events
+        )
 
-            difference = int(difference)
+        for difference in clean_events[
+            "Count Difference"
+        ]:
 
-            if difference not in count_difference_distribution:
-                count_difference_distribution[difference] = 0
+            difference = int(
+                difference
+            )
 
-            count_difference_distribution[difference] += 1
+            if (
+                difference
+                not in count_difference_distribution
+            ):
+                count_difference_distribution[
+                    difference
+                ] = 0
+
+            count_difference_distribution[
+                difference
+            ] += 1
 
         if len(clean_events) > 0:
 
-            current_max = clean_events["Count Difference"].max()
+            current_max = clean_events[
+                "Count Difference"
+            ].max()
 
-            if current_max > max_count_difference:
-                max_count_difference = current_max
+            if (
+                current_max
+                > max_count_difference
+            ):
+                max_count_difference = (
+                    current_max
+                )
 
             events_with_difference_greater_than_one += len(
                 clean_events[
-                    clean_events["Count Difference"] > 1
+                    clean_events[
+                        "Count Difference"
+                    ] > 1
                 ]
             )
 
-        logger.info("%s - Rows: %d | Raw events: %d | Clean events: %d",filename,len(dataframe),len(classified_events),len(clean_events))
-
-        total_cycles += clean_events[
-            "Count Difference"
-        ].sum()
-
         closure_ok = clean_events[
-            clean_events["Event Type"] == "Closure OK"
+            clean_events["Event Type"]
+            == "Closure OK"
         ]
-
-        total_closure_ok += len(closure_ok)
 
         no_load = clean_events[
-            clean_events["Event Type"] == "No Load"
+            clean_events["Event Type"]
+            == "No Load"
         ]
 
-        total_no_load += len(no_load)
-
         bad_closure = clean_events[
-            clean_events["Event Type"] == "Bad Closure"
+            clean_events["Event Type"]
+            == "Bad Closure"
         ]
 
         unknown = clean_events[
-        clean_events["Event Type"] == "Unknown"
+            clean_events["Event Type"]
+            == "Unknown"
         ]
 
-        total_unknown += len(unknown)
-
-        total_bad_closure += len(bad_closure)
-
-        production_events = clean_events[
-        clean_events["Event Type"].isin(
-            ["Closure OK", "Bad Closure"]
+        total_closure_ok += len(
+            closure_ok
         )
-    ]
 
-        total_production_pieces += production_events[
-            "Count Difference"
-        ].sum()
+        total_no_load += len(
+            no_load
+        )
 
-        if len(clean_events) > 0:
+        total_bad_closure += len(
+            bad_closure
+        )
 
-            current_first = clean_events[
-                "timestamp"
-            ].iloc[0]
+        total_unknown += len(
+            unknown
+        )
 
-            current_last = clean_events[
-                "timestamp"
-            ].iloc[-1]
+        logger.info(
+            "%s - Rows: %d | Raw events: %d | Clean events: %d",
+            filename,
+            len(dataframe),
+            len(classified_events),
+            len(clean_events)
+        )
 
-            if first_timestamp is None:
-                first_timestamp = current_first
 
-            last_timestamp = current_last
-cycle_speed=calculate_cycle_speed(total_cycles, first_timestamp, last_timestamp)
-production_speed=calculate_production_speed(total_production_pieces, first_timestamp, last_timestamp)
-torque_results = calculate_torque_results(torque_stats)
-daily_torque_results = calculate_daily_torque_results(daily_torque_stats)
-daily_torque_results = calculate_torque_moving_average(daily_torque_results, window_days=MOVING_AVERAGE_WINDOW_DAYS)
-torque_drift_results = detect_torque_drift(daily_torque_results, window_days=DRIFT_WINDOW_DAYS, threshold=DRIFT_THRESHOLD, min_events=DRIFT_MIN_EVENTS)
-correlation_matrix = calculate_head_correlations(daily_torque_results, min_events=CORRELATION_MIN_EVENTS, min_days=CORRELATION_MIN_DAYS)       
-residual_correlation_matrix = (calculate_head_residual_correlations(daily_torque_results, min_events=CORRELATION_MIN_EVENTS, min_days=CORRELATION_MIN_DAYS))
-top_residual_correlations = find_top_correlations(residual_correlation_matrix,top_n=10)
-final_idle_periods = finalize_idle_period(idle_state, min_duration_seconds=IDLE_MIN_DURATION_SECONDS)
-idle_periods.extend(final_idle_periods)
+context = coordinator.finalize(
+    context
+)
+
+total_cycles = context[
+    "total_cycles"
+]
+
+total_production_pieces = context[
+    "total_production_pieces"
+]
+
+cycle_speed = context[
+    "cycle_speed"
+]
+
+production_speed = context[
+    "production_speed"
+]
+
+first_timestamp = context[
+    "first_timestamp"
+]
+
+last_timestamp = context[
+    "last_timestamp"
+]
+
+torque_results = context[
+    "torque_results"
+]
+
+daily_torque_results = context[
+    "daily_torque_results"
+]
+
+torque_drift_results = context[
+    "drift_results"
+]
+
+anomaly_stats = context[
+    "anomaly_stats"
+]
+
+correlation_matrix = context[
+    "correlation_matrix"
+]
+
+residual_correlation_matrix = context[
+    "residual_correlation_matrix"
+]
+
+top_residual_correlations = context[
+    "top_residual_correlations"
+]
+
+idle_periods = context[
+    "idle_periods"
+]
+
 
 total_idle_seconds = 0
 longest_idle = None
 
 for period in idle_periods:
 
-    total_idle_seconds += (period["duration_seconds"])
+    total_idle_seconds += (
+        period["duration_seconds"]
+    )
 
-    if (longest_idle is None or period["duration_seconds"] > longest_idle["duration_seconds"]):
+    if (
+        longest_idle is None
+        or period["duration_seconds"]
+        > longest_idle["duration_seconds"]
+    ):
         longest_idle = period
 
-longest_idle_periods = sorted(idle_periods,key=lambda period: period["duration_seconds"],reverse=True)[:10]
+longest_idle_periods = sorted(
+    idle_periods,
+    key=lambda period: period[
+        "duration_seconds"
+    ],
+    reverse=True
+)[:10]
+
 
 print("\n===========================")
 print("FINAL RESULTS")
@@ -378,7 +473,9 @@ print("\nMaximum Count Difference:")
 print(max_count_difference)
 
 print("\nEvents with Count Difference > 1:")
-print(events_with_difference_greater_than_one)
+print(
+    events_with_difference_greater_than_one
+)
 
 print("\nCount Difference distribution:")
 
@@ -389,7 +486,9 @@ for difference in sorted(
     print(
         difference,
         "->",
-        count_difference_distribution[difference]
+        count_difference_distribution[
+            difference
+        ]
     )
 
 
@@ -405,90 +504,156 @@ for difference in largest_differences:
     print(
         difference,
         "->",
-        count_difference_distribution[difference]
+        count_difference_distribution[
+            difference
+        ]
     )
+
 
 print("\n===========================")
 print("UNKNOWN STATUS")
 print("===========================")
 
 print("\nUnknown events:")
-print(sum(unknown_status_distribution.values()))
+print(
+    sum(
+        unknown_status_distribution.values()
+    )
+)
 
 print("\nStatus values:")
 
-for status in sorted(unknown_status_distribution.keys()):
+for status in sorted(
+    unknown_status_distribution.keys()
+):
+
     print(
         status,
         "->",
-        unknown_status_distribution[status]
+        unknown_status_distribution[
+            status
+        ]
     )
 
 print("\nUnknown:")
 print(total_unknown)
 
+
 print("\n===========================")
 print("TORQUE ANALYSIS")
 print("===========================")
 
-for head in sorted(torque_results):
-    stats = torque_results[head]
+for head in sorted(
+    torque_results
+):
+
+    stats = torque_results[
+        head
+    ]
 
     print(
         head,
-        "Events:", stats["count"],
-        "Average:", stats["average"],
-        "Std:", round(stats["standard_deviation"], 4),
-        "Min:", stats["min"],
-        "Max:", stats["max"],
-        "Zero:", stats["zero_count"],
+        "Events:",
+        stats["count"],
+        "Average:",
+        stats["average"],
+        "Std:",
+        round(
+            stats["standard_deviation"],
+            4
+        ),
+        "Min:",
+        stats["min"],
+        "Max:",
+        stats["max"],
+        "Zero:",
+        stats["zero_count"]
+    )
 
-    ) 
 
 print("\n===========================")
 print("DAILY TORQUE TREND - H01")
 print("===========================")
 
-for day in daily_torque_results["H01"]:
+for day in daily_torque_results[
+    "H01"
+]:
+
     print(
         day["date"],
-        "Average:", round(day["average"], 4),
+        "Average:",
+        round(
+            day["average"],
+            4
+        ),
         "Moving Average:",
-        round(day["moving_average"], 4),
-        "Events:", day["count"]
+        round(
+            day["moving_average"],
+            4
+        ),
+        "Events:",
+        day["count"]
     )
+
 
 print("\n===========================")
 print("TORQUE DRIFT - H01")
 print("===========================")
 
-for drift in torque_drift_results["H01"]:
+for drift in torque_drift_results[
+    "H01"
+]:
 
     print(
         drift["date"],
-        "Average:", round(drift["average"], 4),
-        "Baseline:", round(drift["baseline"], 4),
-        "Difference:", round(drift["difference"], 4),
-        "Direction:", drift["direction"],
-        "Events:", drift["events"]
+        "Average:",
+        round(
+            drift["average"],
+            4
+        ),
+        "Baseline:",
+        round(
+            drift["baseline"],
+            4
+        ),
+        "Difference:",
+        round(
+            drift["difference"],
+            4
+        ),
+        "Direction:",
+        drift["direction"],
+        "Events:",
+        drift["events"]
     )
+
 
 print("\n===========================")
 print("TORQUE ANOMALIES")
 print("===========================")
 
-for head in sorted(anomaly_stats):
+for head in sorted(
+    anomaly_stats
+):
 
-    stats = anomaly_stats[head]
+    stats = anomaly_stats[
+        head
+    ]
 
     print(
         head,
-        "Anomalies:", stats["count"],
-        "Lowest:", stats["lowest_value"],
-        "at:", stats["lowest_timestamp"],
-        "Highest:", stats["highest_value"],
-        "at:", stats["highest_timestamp"]
+        "Anomalies:",
+        stats["count"],
+        "Lowest:",
+        stats["lowest_value"],
+        "at:",
+        stats["lowest_timestamp"],
+        "Highest:",
+        stats["highest_value"],
+        "at:",
+        stats["highest_timestamp"]
     )
+
 
 print("\n===========================")
 print("HEAD CORRELATIONS - H01")
@@ -496,59 +661,89 @@ print("===========================")
 
 h01_correlations = correlation_matrix[
     "H01"
-].drop("H01").dropna()
+].drop(
+    "H01"
+).dropna()
 
-h01_correlations = h01_correlations.sort_values(
-    ascending=False
+h01_correlations = (
+    h01_correlations.sort_values(
+        ascending=False
+    )
 )
 
-for head, correlation in h01_correlations.items():
+for head, correlation in (
+    h01_correlations.items()
+):
 
     print(
         head,
         "Correlation:",
-        round(correlation, 4)
+        round(
+            correlation,
+            4
+        )
     )
+
 
 print("\n===========================")
 print("RESIDUAL CORRELATIONS - H01")
 print("===========================")
 
 h01_residual_correlations = (
-    residual_correlation_matrix["H01"]
+    residual_correlation_matrix[
+        "H01"
+    ]
     .drop("H01")
     .dropna()
-    .sort_values(ascending=False)
+    .sort_values(
+        ascending=False
+    )
 )
 
-for head, correlation in h01_residual_correlations.items():
+for head, correlation in (
+    h01_residual_correlations.items()
+):
 
     print(
         head,
         "Correlation:",
-        round(correlation, 4)
+        round(
+            correlation,
+            4
+        )
     )
+
 
 print("\n===========================")
 print("TOP RESIDUAL CORRELATIONS")
 print("===========================")
 
-for result in top_residual_correlations:
+for result in (
+    top_residual_correlations
+):
 
     print(
         result["head_1"],
         "-",
         result["head_2"],
         "Correlation:",
-        round(result["correlation"], 4)
+        round(
+            result["correlation"],
+            4
+        )
     )
+
 
 print("\n===========================")
 print("IDLE ANALYSIS")
 print("===========================")
 
 print("\nIdle periods:")
-print(len(idle_periods))
+print(
+    len(
+        idle_periods
+    )
+)
 
 print("\nTotal idle hours:")
 print(
@@ -561,15 +756,27 @@ print(
 if longest_idle is not None:
 
     print("\nLongest idle period:")
-    print("Start:", longest_idle["start"])
-    print("End:", longest_idle["end"])
+
+    print(
+        "Start:",
+        longest_idle["start"]
+    )
+
+    print(
+        "End:",
+        longest_idle["end"]
+    )
+
     print(
         "Duration minutes:",
         round(
-            longest_idle["duration_seconds"] / 60,
+            longest_idle[
+                "duration_seconds"
+            ] / 60,
             2
         )
     )
+
 
 print("\nTop 10 longest idle periods:")
 
@@ -582,25 +789,176 @@ for period in longest_idle_periods:
         period["end"],
         "Minutes:",
         round(
-            period["duration_seconds"] / 60,
+            period[
+                "duration_seconds"
+            ] / 60,
             2
         )
     )
+
 
 print("\n===========================")
 print("COUNTER DROP ANALYSIS")
 print("===========================")
 
-print("\nCounter drops:", total_counter_drops)
-print("Unique drop timestamps:", len(counter_drop_timestamps))
-print("Drops to zero:", counter_drops_to_zero)
-print("Drops to non-zero value:", counter_drops_not_zero)
+print(
+    "\nCounter drops:",
+    total_counter_drops
+)
+
+print(
+    "Unique drop timestamps:",
+    len(
+        counter_drop_timestamps
+    )
+)
+
+print(
+    "Drops to zero:",
+    counter_drops_to_zero
+)
+
+print(
+    "Drops to non-zero value:",
+    counter_drops_not_zero
+)
 
 if largest_counter_drop is not None:
+
     print("\nLargest counter drop:")
-    print("Timestamp:", largest_counter_drop["timestamp"])
-    print("Head:", largest_counter_drop["Head"])
-    print("Previous:", largest_counter_drop["Previous Count"])
-    print("Current:", largest_counter_drop["Count"])
-    print("Difference:", largest_counter_drop["Count Difference"])
-logger.info("Pipeline completed successfully")
+
+    print(
+        "Timestamp:",
+        largest_counter_drop[
+            "timestamp"
+        ]
+    )
+
+    print(
+        "Head:",
+        largest_counter_drop[
+            "Head"
+        ]
+    )
+
+    print(
+        "Previous:",
+        largest_counter_drop[
+            "Previous Count"
+        ]
+    )
+
+    print(
+        "Current:",
+        largest_counter_drop[
+            "Count"
+        ]
+    )
+
+    print(
+        "Difference:",
+        largest_counter_drop[
+            "Count Difference"
+        ]
+    )
+
+
+report = context["report"]
+
+print("\n===========================")
+print("MULTI-AGENT REPORT")
+print("===========================")
+
+print("\nGOAL")
+print(report["goal"])
+
+print("\nDATA")
+
+for key, value in report["data"].items():
+    print(
+        key,
+        ":",
+        value
+    )
+
+print("\nANALYSES")
+
+for analysis in report["analyses"]:
+    print(
+        "-",
+        analysis
+    )
+
+print("\nFINDINGS")
+
+for key, value in report["findings"].items():
+
+    if key in [
+        "top_correlations",
+        "top_residual_correlations"
+    ]:
+        continue
+
+    print(
+        key,
+        ":",
+        value
+    )
+
+print("\nTOP CORRELATIONS")
+
+for correlation in report[
+    "findings"
+]["top_correlations"]:
+
+    print(
+        correlation["head_1"],
+        "-",
+        correlation["head_2"],
+        ":",
+        round(
+            correlation["correlation"],
+            4
+        )
+    )
+
+print("\nTOP RESIDUAL CORRELATIONS")
+
+for correlation in report[
+    "findings"
+]["top_residual_correlations"]:
+
+    print(
+        correlation["head_1"],
+        "-",
+        correlation["head_2"],
+        ":",
+        round(
+            correlation["correlation"],
+            4
+        )
+    )
+
+print("\nCONFIDENCE AND LIMITS")
+
+for item in report[
+    "confidence_and_limits"
+]:
+    print(
+        "-",
+        item
+    )
+
+print("\nNEXT CHECKS")
+
+for item in report[
+    "next_checks"
+]:
+    print(
+        "-",
+        item
+    )
+
+logger.info(
+    "Pipeline completed successfully"
+)

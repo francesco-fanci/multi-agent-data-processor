@@ -24,6 +24,21 @@ class ReportAgent(BaseAgent):
                     "Missing " + key + " in context"
                 )
 
+        unit_validation_problems = context.get(
+            "unit_validation_problems",
+            []
+        )
+
+        quality_summary = context.get(
+            "quality_summary",
+            {}
+        )
+
+        counter_drop_summary = context.get(
+            "counter_drop_summary",
+            {}
+        )
+
         total_anomalies = sum(
             item["count"]
             for item in context["anomaly_stats"].values()
@@ -87,6 +102,51 @@ class ReportAgent(BaseAgent):
                     "production_speed",
                     0.0
                 ),
+
+                "data_quality": {
+                    "raw_events": quality_summary.get(
+                        "raw_events",
+                        0
+                    ),
+                    "clean_events": quality_summary.get(
+                        "clean_events",
+                        0
+                    ),
+                    "valid": quality_summary.get(
+                        "valid",
+                        0
+                    ),
+                    "counter_recovery": quality_summary.get(
+                        "counter_recovery",
+                        0
+                    ),
+                    "data_gap": quality_summary.get(
+                        "data_gap",
+                        0
+                    )
+                },
+
+                "counter_drops": {
+                    "total": counter_drop_summary.get(
+                        "total",
+                        0
+                    ),
+                    "to_zero": counter_drop_summary.get(
+                        "to_zero",
+                        0
+                    ),
+                    "to_non_zero": counter_drop_summary.get(
+                        "to_non_zero",
+                        0
+                    ),
+                    "unique_timestamps": len(
+                        counter_drop_summary.get(
+                            "timestamps",
+                            set()
+                        )
+                    )
+                },
+
                 "torque_anomalies": total_anomalies,
                 "torque_drift_events": total_drifts,
                 "idle_periods": len(
@@ -116,10 +176,6 @@ class ReportAgent(BaseAgent):
                     "imply causation."
                 ),
                 (
-                    "The physical unit of AppTorque is "
-                    "not specified in the available data."
-                ),
-                (
                     "Production speed is an average over "
                     "the observed time interval."
                 )
@@ -143,6 +199,15 @@ class ReportAgent(BaseAgent):
                 )
             ]
         }
+
+        for problem in unit_validation_problems:
+
+            report[
+                "confidence_and_limits"
+            ].append(
+                "Unit validation: "
+                + problem
+            )
 
         result = context.copy()
         result["report"] = report

@@ -1,6 +1,7 @@
 from src.agents.base_agent import BaseAgent
 from src.ingestion.loader import read_data_file
 from src.ingestion.validation import validate_dataframe
+from src.ingestion.unit_validation import validate_units
 
 
 class IngestionAgent(BaseAgent):
@@ -32,11 +33,19 @@ class IngestionAgent(BaseAgent):
             dataframe
         )
 
+        unit_validation_problems = (
+            validate_units()
+        )
+
         result = context.copy()
 
         result["dataframe"] = dataframe
         result["validation_problems"] = (
             validation_problems
+        )
+
+        result["unit_validation_problems"] = (
+            unit_validation_problems
         )
 
         return result

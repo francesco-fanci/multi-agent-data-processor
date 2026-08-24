@@ -3,8 +3,7 @@ import pandas as pd
 from src.agents.base_agent import BaseAgent
 
 from src.analytics.kpi import (
-    calculate_cycle_speed,
-    calculate_production_speed
+    update_incremental_speed
 )
 
 from src.analytics.torque import (
@@ -113,6 +112,31 @@ class AnalyticsAgent(BaseAgent):
             "last_timestamp"
         )
 
+        cycle_speed = context.get(
+            "cycle_speed",
+            0.0
+        )
+
+        production_speed = context.get(
+            "production_speed",
+            0.0
+        )
+
+        elapsed_seconds = context.get(
+            "elapsed_seconds",
+            0.0
+        )
+
+        pending_cycles = context.get(
+            "pending_cycles",
+            0
+        )
+
+        pending_production_pieces = context.get(
+            "pending_production_pieces",
+            0
+        )
+
         valid_events = events[
             events["Data Quality"] == "Valid"
         ].copy()
@@ -166,11 +190,9 @@ class AnalyticsAgent(BaseAgent):
             + new_idle_periods
         )
 
-        total_cycles += (
-            clean_events[
-                "Count Difference"
-            ].sum()
-        )
+        new_cycles = clean_events[
+            "Count Difference"
+        ].sum()
 
         production_events = clean_events[
             clean_events["Event Type"].isin([
@@ -179,10 +201,16 @@ class AnalyticsAgent(BaseAgent):
             ])
         ]
 
-        total_production_pieces += (
+        new_production_pieces = (
             production_events[
                 "Count Difference"
             ].sum()
+        )
+
+        total_cycles += new_cycles
+
+        total_production_pieces += (
+            new_production_pieces
         )
 
         if len(clean_events) > 0:
@@ -195,11 +223,7 @@ class AnalyticsAgent(BaseAgent):
                 clean_events["timestamp"].max()
             )
 
-            if (
-                first_timestamp is None
-                or current_first
-                < pd.to_datetime(first_timestamp)
-            ):
+            if first_timestamp is None:
                 first_timestamp = current_first
 
             if (
@@ -209,19 +233,64 @@ class AnalyticsAgent(BaseAgent):
             ):
                 last_timestamp = current_last
 
-        cycle_speed = calculate_cycle_speed(
-            total_cycles,
-            first_timestamp,
-            last_timestamp
-        )
+            total_elapsed_seconds = (
+                pd.to_datetime(last_timestamp)
+                - pd.to_datetime(first_timestamp)
+            ).total_seconds()
 
-        production_speed = (
-            calculate_production_speed(
-                total_production_pieces,
-                first_timestamp,
-                last_timestamp
+            new_elapsed_seconds = (
+                total_elapsed_seconds
+                - elapsed_seconds
             )
-        )
+
+            if new_elapsed_seconds <= 0:
+
+                pending_cycles += new_cycles
+
+                pending_production_pieces += (
+                    new_production_pieces
+                )
+
+            else:
+
+                cycle_speed, _ = (
+                    update_incremental_speed(
+                        current_speed=cycle_speed,
+                        current_elapsed_seconds=(
+                            elapsed_seconds
+                        ),
+                        new_pieces=(
+                            pending_cycles
+                            + new_cycles
+                        ),
+                        new_elapsed_seconds=(
+                            new_elapsed_seconds
+                        )
+                    )
+                )
+
+                production_speed, _ = (
+                    update_incremental_speed(
+                        current_speed=production_speed,
+                        current_elapsed_seconds=(
+                            elapsed_seconds
+                        ),
+                        new_pieces=(
+                            pending_production_pieces
+                            + new_production_pieces
+                        ),
+                        new_elapsed_seconds=(
+                            new_elapsed_seconds
+                        )
+                    )
+                )
+
+                pending_cycles = 0
+                pending_production_pieces = 0
+
+                elapsed_seconds = (
+                    total_elapsed_seconds
+                )
 
         result = context.copy()
 
@@ -249,6 +318,18 @@ class AnalyticsAgent(BaseAgent):
         result["cycle_speed"] = cycle_speed
         result["production_speed"] = (
             production_speed
+        )
+
+        result["elapsed_seconds"] = (
+             elapsed_seconds
+        )
+
+        result["pending_cycles"] = (
+            pending_cycles
+        )
+
+        result["pending_production_pieces"] = (
+            pending_production_pieces
         )
 
         return result

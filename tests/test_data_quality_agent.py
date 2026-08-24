@@ -73,6 +73,43 @@ def test_data_quality_agent():
 
     assert len(result["clean_events"]) == 1
 
+    assert (
+        result["quality_summary"]["raw_events"]
+        == 1
+    )
+
+    assert (
+        result["quality_summary"]["clean_events"]
+        == 1
+    )
+
+    assert (
+        result["quality_summary"]["valid"]
+        == 1
+    )
+
+    assert (
+        result["quality_summary"][
+            "counter_recovery"
+        ]
+        == 0
+    )
+
+    assert (
+        result["quality_summary"]["data_gap"]
+        == 0
+    )
+
+    assert (
+        result["counter_drop_summary"]["total"]
+        == 0
+    )
+
+    assert (
+        result["counter_drop_summary"]["to_zero"]
+        == 0
+    )
+
 
 def test_agent_preserves_continuity():
 
@@ -98,15 +135,15 @@ def test_agent_preserves_continuity():
         )
     )
 
-    second_result = agent.run({
-        "dataframe": second_dataframe,
-        "previous_counts": (
-            first_result["previous_counts"]
-        ),
-        "previous_timestamp": (
-            first_result["previous_timestamp"]
-        )
-    })
+    second_context = first_result.copy()
+
+    second_context["dataframe"] = (
+        second_dataframe
+    )
+
+    second_result = agent.run(
+        second_context
+    )
 
     h01_events = second_result["events"][
         second_result["events"]["Head"]
@@ -124,6 +161,37 @@ def test_agent_preserves_continuity():
         h01_events.iloc[0]["Count"]
         == 11
     )
+
+    assert (
+        second_result[
+            "quality_summary"
+        ]["raw_events"] == 2
+    )
+
+
+def test_counter_drop_summary():
+
+    dataframe = create_dataframe(
+        [10, 10, 0]
+    )
+
+    agent = DataQualityAgent()
+
+    result = agent.run({
+        "dataframe": dataframe
+    })
+
+    summary = result[
+        "counter_drop_summary"
+    ]
+
+    assert summary["total"] == 1
+    assert summary["to_zero"] == 1
+    assert summary["to_non_zero"] == 0
+
+    assert len(
+        summary["timestamps"]
+    ) == 1
 
 
 def test_missing_dataframe():

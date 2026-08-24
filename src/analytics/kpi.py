@@ -1,25 +1,106 @@
 import pandas as pd
 
-def calculate_speed(total_pieces, first_timestamp, last_timestamp):
-    if first_timestamp is None or last_timestamp is None:
-        return 0.0
-    
-    first_timestamp = pd.to_datetime(first_timestamp)
-    last_timestamp = pd.to_datetime(last_timestamp)
 
-    elapsed_seconds = (last_timestamp - first_timestamp).total_seconds()
+def calculate_speed(
+    total_pieces,
+    first_timestamp,
+    last_timestamp
+):
 
-    if elapsed_seconds<=0:
+    if (
+        first_timestamp is None
+        or last_timestamp is None
+    ):
         return 0.0
-    
-    speed= (total_pieces / elapsed_seconds * 3600) 
-    
+
+    first_timestamp = pd.to_datetime(
+        first_timestamp
+    )
+
+    last_timestamp = pd.to_datetime(
+        last_timestamp
+    )
+
+    elapsed_seconds = (
+        last_timestamp
+        - first_timestamp
+    ).total_seconds()
+
+    if elapsed_seconds <= 0:
+        return 0.0
+
+    speed = (
+        total_pieces
+        / elapsed_seconds
+        * 3600
+    )
+
     return speed
 
 
-def calculate_cycle_speed(total_cycles, first_timestamp, last_timestamp):
-    return calculate_speed(total_cycles, first_timestamp, last_timestamp)
-    
-def calculate_production_speed(total_production_pieces, first_timestamp, last_timestamp):
-    return calculate_speed(total_production_pieces, first_timestamp, last_timestamp)
-   
+def calculate_cycle_speed(
+    total_cycles,
+    first_timestamp,
+    last_timestamp
+):
+
+    return calculate_speed(
+        total_cycles,
+        first_timestamp,
+        last_timestamp
+    )
+
+
+def calculate_production_speed(
+    total_production_pieces,
+    first_timestamp,
+    last_timestamp
+):
+
+    return calculate_speed(
+        total_production_pieces,
+        first_timestamp,
+        last_timestamp
+    )
+
+
+def update_incremental_speed(
+    current_speed,
+    current_elapsed_seconds,
+    new_pieces,
+    new_elapsed_seconds
+):
+
+    if new_elapsed_seconds <= 0:
+        return (
+            current_speed,
+            current_elapsed_seconds
+        )
+
+    interval_speed = (
+        new_pieces
+        / new_elapsed_seconds
+        * 3600
+    )
+
+    total_elapsed_seconds = (
+        current_elapsed_seconds
+        + new_elapsed_seconds
+    )
+
+    updated_speed = (
+        (
+            current_speed
+            * current_elapsed_seconds
+        )
+        +
+        (
+            interval_speed
+            * new_elapsed_seconds
+        )
+    ) / total_elapsed_seconds
+
+    return (
+        updated_speed,
+        total_elapsed_seconds
+    )

@@ -53,7 +53,29 @@ def create_context():
         ),
 
         "top_correlations": [],
-        "top_residual_correlations": []
+        "top_residual_correlations": [],
+
+        "unit_validation_problems": [
+            "Missing unit metadata: AppTorque"
+        ],
+
+        "quality_summary": {
+            "raw_events": 1000,
+            "clean_events": 990,
+            "valid": 980,
+            "counter_recovery": 10,
+            "data_gap": 10
+        },
+
+        "counter_drop_summary": {
+            "total": 5,
+            "to_zero": 4,
+            "to_non_zero": 1,
+            "timestamps": {
+                "2026-02-01 10:00:00",
+                "2026-02-01 11:00:00"
+            }
+        }
     }
 
 
@@ -102,6 +124,68 @@ def test_report_agent():
     assert (
         report["findings"]["idle_hours"]
         == pytest.approx(1.0)
+    )
+
+    assert (
+        report["findings"][
+            "data_quality"
+        ]["raw_events"]
+        == 1000
+    )
+
+    assert (
+        report["findings"][
+            "data_quality"
+        ]["clean_events"]
+        == 990
+    )
+
+    assert (
+        report["findings"][
+            "data_quality"
+        ]["counter_recovery"]
+        == 10
+    )
+
+    assert (
+        report["findings"][
+            "data_quality"
+        ]["data_gap"]
+        == 10
+    )
+
+    assert (
+        "Unit validation: "
+        "Missing unit metadata: AppTorque"
+        in report["confidence_and_limits"]
+    )
+
+    assert (
+        report["findings"][
+            "counter_drops"
+        ]["total"]
+        == 5
+    )
+
+    assert (
+        report["findings"][
+            "counter_drops"
+        ]["to_zero"]
+        == 4
+    )
+
+    assert (
+        report["findings"][
+            "counter_drops"
+        ]["to_non_zero"]
+        == 1
+    )
+
+    assert (
+        report["findings"][
+            "counter_drops"
+        ]["unique_timestamps"]
+        == 2
     )
 
 

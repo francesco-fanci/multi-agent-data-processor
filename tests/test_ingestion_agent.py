@@ -60,6 +60,11 @@ def test_ingestion_agent(tmp_path):
 
     assert len(result["dataframe"]) == 2
     assert result["validation_problems"] == []
+    assert result[
+        "unit_validation_problems"
+    ] == [
+        "Missing unit metadata: AppTorque"
+    ]
 
     assert agent.name == "Ingestion Agent"
 
