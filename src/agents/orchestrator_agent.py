@@ -8,13 +8,17 @@ from src.agents.tools import (
     get_torque_anomalies_summary,
     get_torque_drift_summary,
     get_idle_periods,
-    get_top_correlations
+    get_top_correlations,
+    get_success_rates,
+    get_structured_report
 )
 from src.agents.visualization_tools import (
     plot_torque_over_time,
     plot_machine_status_distribution,
     plot_torque_distribution_across_heads
 )
+
+from src.config import LLM_MODEL_NAME
 
 class AgenticOrchestrator:
     def __init__(self, api_key: str = None):
@@ -27,7 +31,7 @@ class AgenticOrchestrator:
             raise ValueError("GOOGLE_API_KEY is not set. Please provide it or set the environment variable.")
             
         self.llm = ChatGoogleGenerativeAI(
-            model="gemini-3.6-flash",
+            model=LLM_MODEL_NAME,
             google_api_key=api_key,
             temperature=0.0
         )
@@ -39,6 +43,8 @@ class AgenticOrchestrator:
             get_torque_drift_summary,
             get_idle_periods,
             get_top_correlations,
+            get_success_rates,
+            get_structured_report,
             plot_torque_over_time,
             plot_machine_status_distribution,
             plot_torque_distribution_across_heads
@@ -50,6 +56,7 @@ class AgenticOrchestrator:
             "explainable reports on demand for technical users in R&D and Service.\n\n"
             "Guidelines:\n"
             "- Interpret the user's request and autonomously decide which tools to call.\n"
+            "- If the user asks to generate a comprehensive report, use the get_structured_report tool and return it accurately.\n"
             "- Extract findings from the data retrieved by the tools.\n"
             "- If the user asks for a chart, plot, or visualization, use the plotting tools and provide the user with the file path to the saved image.\n"
             "- Provide confident, structured answers with explanations.\n"

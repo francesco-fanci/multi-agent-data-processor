@@ -5,8 +5,7 @@ from langchain_core.tools import tool
 
 # We import the global context from tools to share the same loaded data
 from src.agents.tools import _context
-
-PLOT_DIR = "data/processed/plots"
+from src.config import PLOT_DIR
 
 def ensure_plot_dir():
     os.makedirs(PLOT_DIR, exist_ok=True)
@@ -52,24 +51,16 @@ def plot_machine_status_distribution() -> str:
     ensure_plot_dir()
     filepath = os.path.join(PLOT_DIR, "machine_status_distribution.png")
     
-    # We can infer these from the context or we can just plot the overall KPIs we have
-    # Actually, we don't have total_closure_ok directly in the context dict in main.py.
-    # main.py calculates them but doesn't put them in context! 
-    # Wait, in main.py line 429: `print(total_closure_ok)`. They were NOT saved in context.
-    # We have `total_production_pieces` and `total_cycles`
-    # No Load = total_cycles - total_production_pieces
-    # Let's plot Production vs No Load
-    total_cycles = _context.get("total_cycles", 0)
-    production_pieces = _context.get("total_production_pieces", 0)
-    no_load = total_cycles - production_pieces
+    success_metrics = _context.get("success_metrics", {}).get("overall", {})
+    if not success_metrics:
+        return "No success metrics found in context."
+        
+    labels = list(success_metrics.keys())
+    sizes = list(success_metrics.values())
     
-    labels = ["Production (Closure OK & Bad)", "No Load (Idle cycles)"]
-    sizes = [production_pieces, no_load]
-    colors = ["#4CAF50", "#FFC107"]
-    
-    plt.figure(figsize=(8, 8))
-    plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
-    plt.title("Machine Cycles Distribution (Production vs No Load)")
+    plt.figure(figsize=(10, 8))
+    plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140)
+    plt.title("Machine Cycles Distribution")
     plt.tight_layout()
     plt.savefig(filepath)
     plt.close()
@@ -78,7 +69,7 @@ def plot_machine_status_distribution() -> str:
 
 @tool
 def plot_torque_distribution_across_heads() -> str:
-    """Creates a bar chart showing the average closing torque for all 36 heads. Returns the file path."""
+    """Creates a bar chart showing the average closing torque for all heads. Returns the file path."""
     if not _context:
         return "Context is not initialized."
         

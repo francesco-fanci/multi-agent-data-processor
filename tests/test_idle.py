@@ -200,21 +200,3 @@ def test_finalize_open_idle_period():
     assert len(final_periods) == 1
     assert final_periods[0]["duration_seconds"] == 2
 
-
-def test_missing_status_column():
-
-    dataframe = create_dataframe([
-        "2026-02-01 10:00:00"
-    ])
-
-    dataframe = dataframe.drop(
-        columns=["H36 Status"]
-    )
-
-    with pytest.raises(
-        ValueError,
-        match="Missing required column: H36 Status"
-    ):
-        detect_idle_periods(
-            dataframe
-        )

@@ -10,10 +10,7 @@ def detect_idle_periods(dataframe,idle_state=None,min_duration_seconds=60,max_ga
 
     data["timestamp"] = pd.to_datetime(data["timestamp"])
 
-    status_columns = []
-
-    for number in range(1, 37):
-        status_columns.append(f"H{number:02d} Status")
+    status_columns = [col for col in data.columns if col.startswith("H") and col[1:3].isdigit() and col.endswith(" Status")]
 
     for column in status_columns:
         if column not in data.columns:

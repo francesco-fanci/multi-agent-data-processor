@@ -49,4 +49,7 @@ def read_data_file(zip_path, filename):
             "Unsupported file format: " + filename
         )
 
+    # Deduplication: remove redundant entries to maintain data integrity
+    dataframe = dataframe.drop_duplicates().copy()
+
     return dataframe

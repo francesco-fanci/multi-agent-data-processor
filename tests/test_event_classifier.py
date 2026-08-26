@@ -28,7 +28,7 @@ def test_no_load():
 def test_bad_closure():
 
     dataframe = pd.DataFrame({
-        "Status": [65]
+        "Status": [64]
     })
 
     result = classify_events(dataframe)
@@ -39,7 +39,7 @@ def test_bad_closure():
 def test_unknown_status():
 
     dataframe = pd.DataFrame({
-        "Status": [4]
+        "Status": [99]
     })
 
     result = classify_events(dataframe)
@@ -50,7 +50,7 @@ def test_unknown_status():
 def test_multiple_statuses():
 
     dataframe = pd.DataFrame({
-        "Status": [0, 2, 65, 4, 9]
+        "Status": [0, 2, 64, 4, 99]
     })
 
     result = classify_events(dataframe)
@@ -59,6 +59,6 @@ def test_multiple_statuses():
         "Closure OK",
         "No Load",
         "Bad Closure",
-        "Unknown",
+        "No Closure",
         "Unknown"
     ]

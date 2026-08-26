@@ -1,6 +1,7 @@
 import argparse
 import os
 
+from src.ingestion.cloud_sync import sync_from_cloud
 from src.ingestion.loader import list_data_files
 from src.logging_config import setup_logger
 from src.agents.coordinator import MultiAgentCoordinator
@@ -18,7 +19,24 @@ parser.add_argument(
     help="Folder containing input ZIP files"
 )
 
+parser.add_argument(
+    "--cloud-url",
+    default="s3://arol-telemetry-bucket/raw",
+    help="Cloud storage URL to pull raw datasets from"
+)
+
+parser.add_argument(
+    "--sync-cloud",
+    action="store_true",
+    help="Enable synchronization from Cloud before processing"
+)
+
+
 args = parser.parse_args()
+
+if args.sync_cloud:
+    logger.info("Starting Cloud Data Synchronization...")
+    sync_from_cloud(args.cloud_url, args.input)
 
 if not os.path.isdir(args.input):
     parser.error(
@@ -51,16 +69,14 @@ context = {
     "anomaly_stats": {},
     "idle_periods": [],
     "total_cycles": 0,
-    "total_production_pieces": 0
+    "success_metrics": {
+        "overall": {},
+        "by_head": {}
+    }
 }
 
 total_raw_events = 0
 total_clean_events = 0
-
-total_closure_ok = 0
-total_no_load = 0
-total_bad_closure = 0
-total_unknown = 0
 
 total_valid = 0
 total_counter_recovery = 0
@@ -282,41 +298,13 @@ for zip_path in zip_paths:
                 ]
             )
 
-        closure_ok = clean_events[
-            clean_events["Event Type"]
-            == "Closure OK"
-        ]
+        for event_type, count in clean_events["Event Type"].value_counts().items():
+            context["success_metrics"]["overall"][event_type] = context["success_metrics"]["overall"].get(event_type, 0) + count
 
-        no_load = clean_events[
-            clean_events["Event Type"]
-            == "No Load"
-        ]
-
-        bad_closure = clean_events[
-            clean_events["Event Type"]
-            == "Bad Closure"
-        ]
-
-        unknown = clean_events[
-            clean_events["Event Type"]
-            == "Unknown"
-        ]
-
-        total_closure_ok += len(
-            closure_ok
-        )
-
-        total_no_load += len(
-            no_load
-        )
-
-        total_bad_closure += len(
-            bad_closure
-        )
-
-        total_unknown += len(
-            unknown
-        )
+        for (head, event_type), count in clean_events.groupby(["Head", "Event Type"]).size().items():
+            if head not in context["success_metrics"]["by_head"]:
+                context["success_metrics"]["by_head"][head] = {}
+            context["success_metrics"]["by_head"][head][event_type] = context["success_metrics"]["by_head"][head].get(event_type, 0) + count
 
         logger.info(
             "%s - Rows: %d | Raw events: %d | Clean events: %d",
@@ -439,14 +427,9 @@ print(total_clean_events)
 print("\nTotal counter increments:")
 print(total_cycles)
 
-print("\nClosure OK:")
-print(total_closure_ok)
-
-print("\nNo Load:")
-print(total_no_load)
-
-print("\nBad Closure:")
-print(total_bad_closure)
+print("\nClosure Events Summary:")
+for event, count in context["success_metrics"]["overall"].items():
+    print(f"{event}: {count}")
 
 print("\nProduction pieces:")
 print(total_production_pieces)
@@ -548,8 +531,7 @@ for status in sorted(
         ]
     )
 
-print("\nUnknown:")
-print(total_unknown)
+
 
 
 print("\n===========================")

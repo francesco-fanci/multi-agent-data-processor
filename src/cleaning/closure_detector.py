@@ -12,6 +12,7 @@ def detect_closures(dataframe, head, previous_count=None, previous_timestamp=Non
             raise ValueError("Missing required column: " + column)
 
     data=dataframe[required_columns].copy()
+    data = data.dropna(subset=[count_column]).copy()
 
     data["Previous Count"]=data[count_column].shift(1)
     data["Previous Timestamp"] = data["timestamp"].shift(1)
@@ -22,11 +23,12 @@ def detect_closures(dataframe, head, previous_count=None, previous_timestamp=Non
         data["Previous Timestamp"]
     )
 
-    if previous_count is not None:
-        data.loc[data.index[0], "Previous Count"] = (previous_count)
+    if len(data) > 0:
+        if previous_count is not None:
+            data.loc[data.index[0], "Previous Count"] = (previous_count)
 
-    if previous_timestamp is not None:
-        data.loc[data.index[0], "Previous Timestamp"] = (previous_timestamp)
+        if previous_timestamp is not None:
+            data.loc[data.index[0], "Previous Timestamp"] = (previous_timestamp)
 
     data["Count Difference"]=data[count_column] - data["Previous Count"]
 
@@ -51,8 +53,8 @@ def detect_all_closures(dataframe, previous_counts=None, previous_timestamp=None
 
     new_previous_counts={}
 
-    for number in range(1,37):
-        head = f"H{number:02d}"
+    heads = sorted(list(set(col[:3] for col in dataframe.columns if col.startswith("H") and col[1:3].isdigit() and col[3:4] == " ")))
+    for head in heads:
 
         previous_count=previous_counts.get(head)
 
@@ -83,18 +85,18 @@ def detect_counter_drops(dataframe,previous_counts=None):
     if previous_counts is None:
         previous_counts = {}
 
-    for number in range(1, 37):
-
-        head = f"H{number:02d}"
+    heads = sorted(list(set(col[:3] for col in dataframe.columns if col.startswith("H") and col[1:3].isdigit() and col[3:4] == " ")))
+    for head in heads:
         count_column = head + " Count"
 
         data = dataframe[["timestamp", count_column]].copy()
+        data = data.dropna(subset=[count_column]).copy()
 
         data["Previous Count"] = (data[count_column].shift(1))
 
         previous_count = previous_counts.get(head)
 
-        if previous_count is not None:
+        if len(data) > 0 and previous_count is not None:
             data.loc[data.index[0],"Previous Count"] = previous_count
 
         data["Count Difference"] = (data[count_column] - data["Previous Count"])

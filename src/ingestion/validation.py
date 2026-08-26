@@ -9,10 +9,14 @@ def validate_dataframe(dataframe):
         problems.append("Missing timestamp column")
         return problems
 
-    for number in range(1, 37):
+    # Dynamically find heads from columns
+    heads = sorted(list(set(col[:3] for col in dataframe.columns if col.startswith("H") and col[1:3].isdigit() and col[3:4] == " ")))
 
-        head = f"H{number:02d}"
+    if not heads:
+        problems.append("No head columns found in dataframe")
+        return problems
 
+    for head in heads:
         required_columns = [
             head + " Count",
             head + " AppTorque",
