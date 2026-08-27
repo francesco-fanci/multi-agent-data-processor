@@ -20,7 +20,7 @@ paginate: true
 ---
 
 ## MAS Architecture
-
+ 
 The pipeline is governed by specialized Agents:
 - **IngestionAgent**: Local synchronization and structured DataFrame loading.
 - **DataQualityAgent**: Filters noise, handles missing entries, deduplicates closure counts.

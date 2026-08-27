@@ -31,7 +31,6 @@ The system was evaluated against a standard monolithic processing script to demo
 | **Scalability (Large Data Volumes)**| Memory exhaustion | Agents can be scaled horizontally and process chunks |
 
 ### Plots
-*(Imagine a bar chart here showing memory usage during processing)*
 - Monolithic: Linear memory growth until OOM.
 - MAS: Steady memory usage due to chunked agent processing and state management.
 
