@@ -146,8 +146,7 @@ H36 AppTorque
 H36 Status
 ```
 
-There are 36 machine heads, from `H01` to `H36`.
-
+The number of machine heads (e.g., `H01` to `H48`) is extracted dynamically from the telemetry dataset, conforming to a Configuration-Driven architecture without any hard-coded limits.
 ---
 
 ## Event Detection
@@ -184,7 +183,17 @@ The currently known status codes are:
 |--------|----------------|
 | 0 | Closure OK |
 | 2 | No Load |
-| 65 | Bad Closure |
+| 3 | Failing to reach first torque threshold |
+| 4 | No Closure |
+| 5 | Failing to reach final torque |
+| 8 | No InTorque |
+| 9 | Closure Head raises before TimeInTorque |
+| 16 | No CapTurns |
+| 17 | Cap closed with less degrees than CapTurns |
+| 32 | Following Error |
+| 33 | Tracking error between real and controlled position |
+| 64 | Bad Closure |
+| 65 | ClosureTorque reached but cap still rotating |
 | other | Unknown |
 
 Unknown status codes are intentionally preserved instead of assigning an undocumented meaning.

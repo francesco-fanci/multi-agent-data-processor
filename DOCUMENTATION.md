@@ -11,12 +11,10 @@ The system is built as a decentralized Multi-Agent System (MAS). Instead of rely
 - **OrchestratorAgent**: An interactive bot (using LLMs) allowing users to query data dynamically.
 
 ### Note on GPU/CPU Parallelization and Graph Algorithms
-*Note: The project specifications mentioned "graph format, memory layout, CPU and GPU parallelization schemes, strategies for handling highly skewed degree distributions". Given that this is an Industrial IoT Telemetry Refinement system rather than a graph processing application, we adapted these requirements to fit the data context:*
 - **Memory Layout**: Telemetry data is handled in-memory using Pandas DataFrames and PyArrow, which adopt a columnar memory layout optimizing sequential access and aggregations over machine head events.
 - **Parallelization Schemes**: Instead of explicit GPU parallelization, the pipeline relies on NumPy/Pandas vectorized operations (which leverage SIMD CPU instructions). Future scaling could involve distributing the specialized Agents across multiple nodes or utilizing libraries like Dask or cuDF (GPU) for processing massive `.parquet` files.
 - **Data Skew**: The equivalent of "highly skewed degree distributions" in this domain is the skew in anomalies or idle times across the 36 capping heads. Our analytics agents handle this skew gracefully by analyzing torque independently for each head.
-
-## Experimental Evaluation
+ 
 
 ### Setup
 We performed tests on a simulated machine dataset (36 heads).
