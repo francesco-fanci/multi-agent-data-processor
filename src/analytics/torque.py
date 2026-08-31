@@ -1,55 +1,34 @@
 from datetime import timedelta
 def update_torque_statistics(torque_stats, events):
 
-    for number in range(1, 37):
-        head = f"H{number:02d}"
+    heads = events["Head"].unique()
+    for head in heads:
 
-        head_events = events[
-            events["Head"] == head
-        ]
+        head_events = events[events["Head"] == head]
 
-        torque_values = head_events[
-            "AppTorque"
-        ].dropna()
+        torque_values = head_events["AppTorque"].dropna()
 
         if len(torque_values) == 0:
             continue
 
         if head not in torque_stats:
-            torque_stats[head] = {
-                "count": 0,
-                "sum": 0.0,
-                "sum_squares": 0.0,
-                "min": None,
-                "max": None,
-                "zero_count": 0
-            }
+            torque_stats[head] = {"count": 0,"sum": 0.0,"sum_squares": 0.0,"min": None,"max": None,"zero_count": 0}
 
         torque_stats[head]["count"] += len(torque_values)
 
-        torque_stats[head]["sum"] += (
-            torque_values.sum()
-        )
+        torque_stats[head]["sum"] += (torque_values.sum())
 
         torque_stats[head]["sum_squares"] += (torque_values ** 2).sum()
 
-        torque_stats[head]["zero_count"] += (
-            torque_values == 0
-        ).sum()
+        torque_stats[head]["zero_count"] += (torque_values == 0).sum()
 
         current_min = torque_values.min()
         current_max = torque_values.max()
 
-        if (
-            torque_stats[head]["min"] is None
-            or current_min < torque_stats[head]["min"]
-        ):
+        if (torque_stats[head]["min"] is None or current_min < torque_stats[head]["min"]):
             torque_stats[head]["min"] = current_min
 
-        if (
-            torque_stats[head]["max"] is None
-            or current_max > torque_stats[head]["max"]
-        ):
+        if (torque_stats[head]["max"] is None or current_max > torque_stats[head]["max"]):
             torque_stats[head]["max"] = current_max
 
 
@@ -64,31 +43,18 @@ def calculate_torque_results(torque_stats):
         if count == 0:
             average = 0.0
         else:
-            average = (
-                torque_stats[head]["sum"]
-                / count
-            )
+            average = (torque_stats[head]["sum"] / count)
         
         if count == 0:
             standard_deviation = 0.0
         else:
-            variance = (
-                torque_stats[head]["sum_squares"] / count
-                - average ** 2
-            )
+            variance = (torque_stats[head]["sum_squares"] / count - average ** 2)
 
             if variance < 0:
                 variance = 0.0    
             standard_deviation = variance ** 0.5
 
-        results[head] = {
-            "count": count,
-            "average": average,
-            "standard_deviation": standard_deviation,
-            "min": torque_stats[head]["min"],
-            "max": torque_stats[head]["max"],
-            "zero_count": torque_stats[head]["zero_count"]
-        }
+        results[head] = {"count": count,"average": average,"standard_deviation": standard_deviation,"min": torque_stats[head]["min"],"max": torque_stats[head]["max"],"zero_count": torque_stats[head]["zero_count"]}
 
     return results
 
@@ -96,8 +62,8 @@ def update_daily_torque_statistics(daily_stats, events):
     data=events.copy()
     data["Date"]=data["timestamp"].dt.date
 
-    for number in range(1,37):
-        head=f"H{number:02d}"
+    heads = data["Head"].unique()
+    for head in heads:
 
         head_events=data[data["Head"] == head]
 
@@ -204,13 +170,5 @@ def detect_torque_drift(daily_torque_results, window_days=7, threshold=0.1, min_
                     direction = "Decrease"
                 
                 drift_results[head].append(
-                     {
-                        "date": current_date,
-                        "average": current_day["average"],
-                        "baseline": baseline,
-                        "difference": difference,
-                        "direction": direction,
-                        "events": current_day["count"]
-                    }
-                )
+                     {"date": current_date,"average": current_day["average"],"baseline": baseline,"difference": difference,"direction": direction,"events": current_day["count"]})
     return drift_results

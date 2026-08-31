@@ -3,11 +3,7 @@ import zipfile
 import pandas as pd
 
 
-SUPPORTED_EXTENSIONS = (
-    ".csv",
-    ".json",
-    ".parquet"
-)
+SUPPORTED_EXTENSIONS = (".csv",".json",".parquet")
 
 
 def list_data_files(zip_path):
@@ -16,9 +12,7 @@ def list_data_files(zip_path):
     with zipfile.ZipFile(zip_path, "r") as archive:
         for filename in archive.namelist():
 
-            if filename.lower().endswith(
-                SUPPORTED_EXTENSIONS
-            ):
+            if filename.lower().endswith(SUPPORTED_EXTENSIONS):
                 data_files.append(filename)
 
     data_files.sort()
@@ -45,9 +39,7 @@ def read_data_file(zip_path, filename):
         dataframe = pd.read_parquet(file_buffer)
 
     else:
-        raise ValueError(
-            "Unsupported file format: " + filename
-        )
+        raise ValueError("Unsupported file format: " + filename)
 
     # Deduplication: remove redundant entries to maintain data integrity
     dataframe = dataframe.drop_duplicates().copy()

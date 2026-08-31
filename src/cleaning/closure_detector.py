@@ -19,9 +19,7 @@ def detect_closures(dataframe, head, previous_count=None, previous_timestamp=Non
 
     data["timestamp"] = pd.to_datetime(data["timestamp"])
 
-    data["Previous Timestamp"] = pd.to_datetime(
-        data["Previous Timestamp"]
-    )
+    data["Previous Timestamp"] = pd.to_datetime(data["Previous Timestamp"])
 
     if len(data) > 0:
         if previous_count is not None:

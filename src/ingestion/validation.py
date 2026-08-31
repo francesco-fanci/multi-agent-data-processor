@@ -17,39 +17,24 @@ def validate_dataframe(dataframe):
         return problems
 
     for head in heads:
-        required_columns = [
-            head + " Count",
-            head + " AppTorque",
-            head + " Status"
-        ]
+        required_columns = [head + " Count",head + " AppTorque",head + " Status"]
 
         for column in required_columns:
             if column not in dataframe.columns:
-                problems.append(
-                    "Missing column: " + column
-                )
+                problems.append("Missing column: " + column)
 
     if len(problems) > 0:
         return problems
 
-    invalid_timestamps = pd.to_datetime(
-        dataframe["timestamp"],
-        errors="coerce"
-    ).isna().sum()
+    invalid_timestamps = pd.to_datetime(dataframe["timestamp"],errors="coerce").isna().sum()
 
     if invalid_timestamps > 0:
-        problems.append(
-            "Invalid timestamps: "
-            + str(invalid_timestamps)
-        )
+        problems.append("Invalid timestamps: " + str(invalid_timestamps))
 
     missing_values = dataframe.isna().sum()
     total_missing = int(missing_values.sum())
 
     if total_missing > 0:
-        problems.append(
-            "Missing values: "
-            + str(total_missing)
-        )
+        problems.append("Missing values: " + str(total_missing))
 
     return problems

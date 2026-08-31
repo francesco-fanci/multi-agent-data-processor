@@ -2,21 +2,9 @@ import os
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langgraph.prebuilt import create_react_agent
 
-from src.agents.tools import (
-    get_overall_kpis,
-    get_head_performance,
-    get_torque_anomalies_summary,
-    get_torque_drift_summary,
-    get_idle_periods,
-    get_top_correlations,
-    get_success_rates,
-    get_structured_report
-)
-from src.agents.visualization_tools import (
-    plot_torque_over_time,
-    plot_machine_status_distribution,
-    plot_torque_distribution_across_heads
-)
+from src.agents.tools import (get_overall_kpis,get_head_performance,get_torque_anomalies_summary,get_torque_drift_summary,get_idle_periods,get_top_correlations,get_success_rates,get_structured_report)
+
+from src.agents.visualization_tools import (plot_torque_over_time,plot_machine_status_distribution,plot_torque_distribution_across_heads)
 
 from src.config import LLM_MODEL_NAME
 
@@ -36,19 +24,7 @@ class AgenticOrchestrator:
             temperature=0.0
         )
         
-        self.tools = [
-            get_overall_kpis,
-            get_head_performance,
-            get_torque_anomalies_summary,
-            get_torque_drift_summary,
-            get_idle_periods,
-            get_top_correlations,
-            get_success_rates,
-            get_structured_report,
-            plot_torque_over_time,
-            plot_machine_status_distribution,
-            plot_torque_distribution_across_heads
-        ]
+        self.tools = [get_overall_kpis,get_head_performance,get_torque_anomalies_summary,get_torque_drift_summary,get_idle_periods,get_top_correlations,get_success_rates,get_structured_report,plot_torque_over_time,plot_machine_status_distribution,plot_torque_distribution_across_heads]
         
         system_prompt = (
             "You are an industrial Multi-Agent AI system acting as an expert assistant for AROL capping machines. "
@@ -64,11 +40,7 @@ class AgenticOrchestrator:
             "- Remember that correlation between heads does not imply causation."
         )
         
-        self.agent = create_react_agent(
-            model=self.llm,
-            tools=self.tools,
-            prompt=system_prompt
-        )
+        self.agent = create_react_agent(model=self.llm,tools=self.tools,prompt=system_prompt)
 
     def process_query(self, query: str) -> str:
         """Processes a natural language query and returns the agent's response."""
