@@ -520,6 +520,22 @@ The program reports an error when:
 
 ---
 
+## Interactive Agentic CLI (bot.py)
+
+After successfully running the pipeline (`py main.py`), the system saves the analytical context in `data/processed/context.pkl`. 
+You can then query the machine data using natural language through the interactive Agentic AI bot.
+
+To start the bot, you must provide your Google Gemini API key as an environment variable. If you don't have one, you can get a free API key from [Google AI Studio](https://aistudio.google.com/app/apikey):
+
+```bash
+export GOOGLE_API_KEY="your_api_key_here"
+py bot.py
+```
+
+The bot uses a ReAct (Reason and Act) loop to autonomously call Python tools, process mathematical queries, and generate on-demand reports and Matplotlib charts without hallucinating data.
+
+---
+
 ## Logging
 
 The pipeline uses Python logging.
