@@ -1,0 +1,157 @@
+{
+  "goal": "Refine industrial telemetry data and identify relevant production patterns.",
+  "data": {
+    "first_timestamp": "2026-01-31T16:00:06",
+    "last_timestamp": "2026-04-30T16:59:59",
+    "total_cycles": 55888606.0,
+    "production_pieces": 32202426.0
+  },
+  "analyses": [
+    "Closure detection",
+    "Data quality filtering",
+    "Production speed",
+    "Torque statistics",
+    "Torque moving average",
+    "Torque drift detection",
+    "Torque anomaly detection",
+    "Head correlation analysis",
+    "Idle period detection"
+  ],
+  "findings": {
+    "cycle_speed": 26152.857675610114,
+    "production_speed": 15069.001076666085,
+    "data_quality": {
+      "raw_events": 55131012,
+      "clean_events": 55129032,
+      "valid": 55128611,
+      "counter_recovery": 1980,
+      "data_gap": 421
+    },
+    "counter_drops": {
+      "total": 2088,
+      "to_zero": 2088,
+      "to_non_zero": 0,
+      "unique_timestamps": 60
+    },
+    "torque_anomalies": 104462,
+    "torque_drift_events": 468,
+    "idle_periods": 3489,
+    "idle_hours": 1418.3019444444444,
+    "top_correlations": [
+      {
+        "head_1": "H11",
+        "head_2": "H12",
+        "correlation": 0.999996160223548
+      },
+      {
+        "head_1": "H21",
+        "head_2": "H24",
+        "correlation": 0.9999951800330849
+      },
+      {
+        "head_1": "H29",
+        "head_2": "H34",
+        "correlation": 0.9999948337852979
+      },
+      {
+        "head_1": "H27",
+        "head_2": "H29",
+        "correlation": 0.9999943603220823
+      },
+      {
+        "head_1": "H04",
+        "head_2": "H30",
+        "correlation": 0.9999938626698365
+      },
+      {
+        "head_1": "H23",
+        "head_2": "H25",
+        "correlation": 0.9999936141215023
+      },
+      {
+        "head_1": "H24",
+        "head_2": "H25",
+        "correlation": 0.9999934615532189
+      },
+      {
+        "head_1": "H17",
+        "head_2": "H18",
+        "correlation": 0.9999933818467549
+      },
+      {
+        "head_1": "H23",
+        "head_2": "H28",
+        "correlation": 0.9999928633827855
+      },
+      {
+        "head_1": "H31",
+        "head_2": "H32",
+        "correlation": 0.9999928380069022
+      }
+    ],
+    "top_residual_correlations": [
+      {
+        "head_1": "H21",
+        "head_2": "H24",
+        "correlation": 0.9010090478874303
+      },
+      {
+        "head_1": "H24",
+        "head_2": "H25",
+        "correlation": 0.8638163408314821
+      },
+      {
+        "head_1": "H06",
+        "head_2": "H21",
+        "correlation": -0.8550091143029058
+      },
+      {
+        "head_1": "H22",
+        "head_2": "H25",
+        "correlation": 0.8419635792201245
+      },
+      {
+        "head_1": "H06",
+        "head_2": "H24",
+        "correlation": -0.8375271461414606
+      },
+      {
+        "head_1": "H16",
+        "head_2": "H21",
+        "correlation": -0.827681407778598
+      },
+      {
+        "head_1": "H22",
+        "head_2": "H24",
+        "correlation": 0.8224760867268468
+      },
+      {
+        "head_1": "H21",
+        "head_2": "H25",
+        "correlation": 0.8217071947036213
+      },
+      {
+        "head_1": "H17",
+        "head_2": "H18",
+        "correlation": 0.8051278161445576
+      },
+      {
+        "head_1": "H16",
+        "head_2": "H24",
+        "correlation": -0.7948761911825041
+      }
+    ]
+  },
+  "confidence_and_limits": [
+    "Torque anomalies are statistical outliers and do not directly indicate machine failures.",
+    "Correlation between heads does not imply causation.",
+    "Production speed is an average over the observed time interval.",
+    "Unit validation: Missing unit metadata: AppTorque"
+  ],
+  "next_checks": [
+    "Review detected torque drifts and anomalies with machine context.",
+    "Investigate long idle periods.",
+    "Review strong residual correlations between heads.",
+    "Confirm AppTorque measurement unit from machine documentation."
+  ]
+}
