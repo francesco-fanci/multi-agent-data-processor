@@ -146,7 +146,8 @@ H36 AppTorque
 H36 Status
 ```
 
-The number of machine heads (e.g., `H01` to `H48`) is extracted dynamically from the telemetry dataset, conforming to a Configuration-Driven architecture without any hard-coded limits.
+There are 36 machine heads, from `H01` to `H36`.
+
 ---
 
 ## Event Detection
@@ -183,17 +184,7 @@ The currently known status codes are:
 |--------|----------------|
 | 0 | Closure OK |
 | 2 | No Load |
-| 3 | Failing to reach first torque threshold |
-| 4 | No Closure |
-| 5 | Failing to reach final torque |
-| 8 | No InTorque |
-| 9 | Closure Head raises before TimeInTorque |
-| 16 | No CapTurns |
-| 17 | Cap closed with less degrees than CapTurns |
-| 32 | Following Error |
-| 33 | Tracking error between real and controlled position |
-| 64 | Bad Closure |
-| 65 | ClosureTorque reached but cap still rotating |
+| 65 | Bad Closure |
 | other | Unknown |
 
 Unknown status codes are intentionally preserved instead of assigning an undocumented meaning.
@@ -468,71 +459,47 @@ Clone the repository and move into the project directory.
 Install the required Python dependencies:
 
 ```bash
-py -m pip install -r requirements.txt
+git clone <repository_url>
+cd multi-agent-data-processor
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
 ```
 
-Dependencies:
+## 🏃‍♂️ Quickstart & Demo
 
-```text
-pandas==3.0.2
-pyarrow==25.0.1
-pytest==8.3.5
-```
-
----
-
-## Running the Pipeline
-
-The default command is:
-
+### 1. End-to-End Evaluation Demo (Recommended)
+To fulfill the project specifications, we provide an automated demo script. It runs the entire pipeline on your raw data and automatically generates multiple formatted Markdown reports.
 ```bash
-py main.py
+# Ensure your data is in data/raw/
+python demo.py
 ```
+*This will generate `reports/kpi_quality_report.md` and `reports/anomaly_diagnostics_report.md`.*
 
-The system automatically searches for ZIP files inside:
-
-```text
-data/raw
-```
-
-A different input folder can be specified using the CLI:
-
+### 2. Manual Pipeline Execution
+If you prefer to run the core pipeline manually without generating the demo reports:
 ```bash
-py main.py --input path/to/input
+python main.py --input data/raw
+```
+*This processes all telemetry, creates `logs/pipeline.log`, and saves the context cache to `data/processed/context.pkl`.*
+
+### 3. Launch the AI Bot Interface
+Once the data is processed (via `demo.py` or `main.py`), you can chat with your data using the Orchestrator Agent:
+```bash
+export GOOGLE_API_KEY="your-gemini-api-key"
+python bot.py
 ```
 
-Example:
-
+## 🧪 Testing
+The project is backed by a robust suite of 87 automated unit and integration tests.
 ```bash
-py main.py --input smoke_input
-```
-
-CLI help:
-
-```bash
-py main.py --help
+python -m pytest tests/ -v
 ```
 
 The program reports an error when:
 
 - the input directory does not exist;
 - no ZIP archives are available in the selected directory.
-
----
-
-## Interactive Agentic CLI (bot.py)
-
-After successfully running the pipeline (`py main.py`), the system saves the analytical context in `data/processed/context.pkl`. 
-You can then query the machine data using natural language through the interactive Agentic AI bot.
-
-To start the bot, you must provide your Google Gemini API key as an environment variable. If you don't have one, you can get a free API key from [Google AI Studio](https://aistudio.google.com/app/apikey):
-
-```bash
-export GOOGLE_API_KEY="your_api_key_here"
-py bot.py
-```
-
-The bot uses a ReAct (Reason and Act) loop to autonomously call Python tools, process mathematical queries, and generate on-demand reports and Matplotlib charts without hallucinating data.
 
 ---
 
@@ -543,172 +510,25 @@ The pipeline uses Python logging.
 Logs are written to:
 
 ```text
-logs/pipeline.log
+multi-agent-data-processor/
+├── data/               # Raw input ZIPs and processed context caches
+├── docs/               # Detailed methodologies, logic definitions, and sample reports
+├── logs/               # Execution logs
+├── reports/            # Output folder for generated Markdown reports
+├── src/
+│   ├── agents/         # MAS Agents (Ingestion, Quality, Analytics, Report, Orchestrator)
+│   ├── analytics/      # Deterministic analytical functions (drift, anomalies, etc.)
+│   ├── cleaning/       # Data sanitization logic
+│   └── ingestion/      # Data loaders and validators
+├── tests/              # Pytest suite
+├── demo.py             # End-to-End evaluation script
+├── bot.py              # Interactive AI CLI
+├── main.py             # Main data processing pipeline
+└── DOCUMENTATION.md    # High-level design choices and experimental evaluation
 ```
 
-The log includes:
-
-- pipeline start;
-- processed ZIP archives;
-- processed telemetry files;
-- row counts;
-- detected event counts;
-- validation warnings;
-- processing errors;
-- successful completion.
-
-If a file cannot be processed, the error is logged and the pipeline can continue with the remaining files.
-
----
-
-## Testing
-
-The project includes automated unit and integration tests.
-
-Run all tests with:
-
-```bash
-py -m pytest tests -q
-```
-
-Final verified test result:
-
-```text
-87 passed
-```
-
-Tests cover:
-
-- ingestion;
-- input validation;
-- unit metadata validation;
-- event classification;
-- closure detection;
-- counter continuity;
-- data-quality filtering;
-- counter drops;
-- KPI calculation;
-- incremental production speed;
-- torque statistics;
-- drift detection;
-- anomaly detection;
-- correlation analysis;
-- idle detection;
-- individual agents;
-- Multi-Agent Coordinator;
-- final report generation.
-
----
-
-## Verified Final Run
-
-The final pipeline execution processed the complete telemetry dataset for February, March and April 2026.
-
-Observed telemetry interval:
-
-```text
-2026-01-31 16:00:06
-to
-2026-04-30 16:59:59
-```
-
-Main results:
-
-```text
-Raw events:              55,131,012
-Clean events:            55,129,032
-
-Total counter increments:
-55,888,606
-
-Closure OK:              31,669,636
-No Load:                 23,458,288
-Bad Closure:                  1,072
-
-Production pieces:       32,203,502
-
-Cycle speed:             26,152.8577 pieces/hour
-Production speed:        15,069.5046 pieces/hour
-```
-
-Data-quality results:
-
-```text
-Valid events:            55,128,611
-Counter Recovery:             1,980
-Data Gap:                       421
-```
-
-Counter-drop analysis:
-
-```text
-Counter drops:              2,088
-Drops to zero:              2,088
-Drops to non-zero:              0
-Unique drop timestamps:        60
-```
-
-The largest observed counter drop was:
-
-```text
-Head: H16
-Previous Count: 565447
-Current Count: 0
-Difference: -565447
-```
-
-Other final analytics:
-
-```text
-Torque anomalies:        104,678
-Torque drift events:         468
-
-Idle periods:              3,489
-Total idle hours:        1,418.30
-```
-
-The strongest residual correlations included:
-
-```text
-H21 - H24    0.9018
-H24 - H25    0.8645
-H06 - H21   -0.8531
-H22 - H25    0.8430
-H06 - H24   -0.8390
-```
-
----
-
-## Report Limitations
-
-The generated report explicitly states important interpretation limits.
-
-In particular:
-
-- torque anomalies are statistical outliers and do not directly indicate machine failures;
-- correlations between heads do not imply causation;
-- production speed represents an average over the observed interval;
-- the physical measurement unit of `AppTorque` is not available in the provided dataset.
-
----
-
-## Final Output
-
-At the end of a successful execution, the pipeline generates a structured Multi-Agent report containing:
-
-```text
-GOAL
-DATA
-ANALYSES
-FINDINGS
-TOP CORRELATIONS
-TOP RESIDUAL CORRELATIONS
-CONFIDENCE AND LIMITS
-NEXT CHECKS
-```
-
-A successful execution terminates with:
-
-```text
-Pipeline completed successfully
-```
+## 📚 Deep-Dive Documentation
+To keep this README focused as a quickstart guide, all heavy technical documentation has been delegated to the `docs/` folder:
+* **[Methodology & Logic](docs/methodology.md)**: Mathematical formulas, anomaly thresholds, and data quality classification rules.
+* **[Final Run Report](docs/final_run_report.md)**: Static output dump, statistics, and interpretation limits of our final verified execution (55M+ events processed).
+* **[Design Choices](DOCUMENTATION.md)**: Details on CPU parallelization, memory layout, and architecture decisions.
