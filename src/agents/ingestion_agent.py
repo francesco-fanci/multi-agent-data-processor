@@ -7,45 +7,27 @@ from src.ingestion.unit_validation import validate_units
 class IngestionAgent(BaseAgent):
 
     def __init__(self):
-        super().__init__(
-            name="Ingestion Agent",
-            goal="Load and validate industrial telemetry data"
-        )
+        super().__init__(name="Ingestion Agent",goal="Load and validate industrial telemetry data")
 
     def run(self, context):
 
         if "zip_path" not in context:
-            raise ValueError(
-                "Missing zip_path in context"
-            )
+            raise ValueError("Missing zip_path in context")
 
         if "filename" not in context:
-            raise ValueError(
-                "Missing filename in context"
-            )
+            raise ValueError("Missing filename in context")
 
-        dataframe = read_data_file(
-            context["zip_path"],
-            context["filename"]
-        )
+        dataframe = read_data_file(context["zip_path"],context["filename"])
 
-        validation_problems = validate_dataframe(
-            dataframe
-        )
+        validation_problems = validate_dataframe(dataframe)
 
-        unit_validation_problems = (
-            validate_units()
-        )
+        unit_validation_problems = (validate_units())
 
         result = context.copy()
 
         result["dataframe"] = dataframe
-        result["validation_problems"] = (
-            validation_problems
-        )
+        result["validation_problems"] = (validation_problems)
 
-        result["unit_validation_problems"] = (
-            unit_validation_problems
-        )
+        result["unit_validation_problems"] = (unit_validation_problems)
 
         return result

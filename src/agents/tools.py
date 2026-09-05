@@ -161,4 +161,4 @@ def get_structured_report() -> str:
     if not report:
         return "No structured report found in context."
         
-    return json.dumps(report, indent=2)
+    return json.dumps(report, indent=2, default=str)

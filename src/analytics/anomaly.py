@@ -1,17 +1,9 @@
 def update_torque_anomalies(anomaly_stats, events, iqr_multiplier=3.0, minimum_margin=0.05, min_events=100):
-    for number in range(1,37):
-
-        head=f"H{number:02d}"
+    heads = events["Head"].unique()
+    for head in heads:
 
         if head not in anomaly_stats:
-            anomaly_stats[head] = {
-                "count": 0,
-                "lowest_value": None,
-                "lowest_timestamp": None,
-                "highest_value": None,
-                "highest_timestamp": None,
-
-            }
+            anomaly_stats[head] = {"count": 0,"lowest_value": None,"lowest_timestamp": None,"highest_value": None,"highest_timestamp": None,}
         head_events=events[events["Head"]==head]
 
         torque_values=head_events["AppTorque"].dropna()
