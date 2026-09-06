@@ -4,4 +4,6 @@ __pycache__/
 data/raw/
 data/processed/
 *.zip
-logs/
+logs/venv/
+.env
+.DS_Store
