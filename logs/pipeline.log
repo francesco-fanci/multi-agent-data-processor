@@ -1,361 +1,361 @@
-2026-09-05 17:00:42,900 - INFO - Pipeline started
-2026-09-05 17:00:42,900 - INFO - Processing zip: data/raw/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02.zip
-2026-09-05 17:00:42,901 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-01.csv
-2026-09-05 17:00:42,905 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-01.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,905 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-02.csv
-2026-09-05 17:00:42,906 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-02.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,906 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-03.csv
-2026-09-05 17:00:42,906 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-03.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,906 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-04.csv
-2026-09-05 17:00:42,907 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-04.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,907 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-05.csv
-2026-09-05 17:00:42,907 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-05.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,907 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-06.csv
-2026-09-05 17:00:42,908 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-06.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,908 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-07.csv
-2026-09-05 17:00:42,908 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-07.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,908 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-08.csv
-2026-09-05 17:00:42,908 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-08.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,909 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-09.csv
-2026-09-05 17:00:42,909 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-09.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,909 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-10.csv
-2026-09-05 17:00:42,909 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-10.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,909 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-11.csv
-2026-09-05 17:00:42,910 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-11.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,910 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-12.csv
-2026-09-05 17:00:42,910 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-12.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,910 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-13.csv
-2026-09-05 17:00:42,910 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-13.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,910 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-14.csv
-2026-09-05 17:00:42,911 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-14.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,911 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-15.csv
-2026-09-05 17:00:42,911 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-15.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,911 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-16.csv
-2026-09-05 17:00:42,911 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-16.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,911 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-17.csv
-2026-09-05 17:00:42,912 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-17.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,912 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-18.csv
-2026-09-05 17:00:42,912 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-18.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,912 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-19.csv
-2026-09-05 17:00:42,913 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-19.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,913 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-20.csv
-2026-09-05 17:00:42,913 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-20.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,913 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-21.csv
-2026-09-05 17:00:42,913 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-21.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,913 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-22.csv
-2026-09-05 17:00:42,914 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-22.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,914 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-23.csv
-2026-09-05 17:00:42,914 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-23.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,914 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-24.csv
-2026-09-05 17:00:42,914 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-24.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,914 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-25.csv
-2026-09-05 17:00:42,915 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-25.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,915 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-26.csv
-2026-09-05 17:00:42,915 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-26.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,915 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-27.csv
-2026-09-05 17:00:42,916 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-27.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,916 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-28.csv
-2026-09-05 17:00:42,916 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-28.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:00:42,916 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-01.csv
-2026-09-05 17:00:44,796 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-01.csv - Rows: 86399 | Raw events: 765711 | Clean events: 765711
-2026-09-05 17:00:44,796 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-02.csv
-2026-09-05 17:00:46,978 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-02.csv - Rows: 86399 | Raw events: 998934 | Clean events: 998934
-2026-09-05 17:00:46,978 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-03.csv
-2026-09-05 17:00:48,557 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-03.csv - Rows: 86400 | Raw events: 525617 | Clean events: 525617
-2026-09-05 17:00:48,558 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-04.csv
-2026-09-05 17:00:49,854 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-04.csv - Rows: 58771 | Raw events: 522975 | Clean events: 522975
-2026-09-05 17:00:49,854 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-05.csv
-2026-09-05 17:00:51,076 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-05.csv - Rows: 86356 | Raw events: 89050 | Clean events: 88942
-2026-09-05 17:00:51,076 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-06.csv
-2026-09-05 17:00:52,693 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-06.csv - Rows: 86399 | Raw events: 589311 | Clean events: 589311
-2026-09-05 17:00:52,693 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-07.csv
-2026-09-05 17:00:54,094 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-07.csv - Rows: 86400 | Raw events: 409383 | Clean events: 409383
-2026-09-05 17:00:54,094 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-08.csv
-2026-09-05 17:00:56,381 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-08.csv - Rows: 86400 | Raw events: 1112826 | Clean events: 1112826
-2026-09-05 17:00:56,381 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-09.csv
-2026-09-05 17:00:58,493 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-09.csv - Rows: 86400 | Raw events: 878430 | Clean events: 878430
-2026-09-05 17:00:58,494 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-10.csv
-2026-09-05 17:01:00,938 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-10.csv - Rows: 86400 | Raw events: 1128132 | Clean events: 1128132
-2026-09-05 17:01:00,938 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-11.csv
-2026-09-05 17:01:02,721 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-11.csv - Rows: 86161 | Raw events: 481735 | Clean events: 481735
-2026-09-05 17:01:02,721 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-12.csv
-2026-09-05 17:01:04,778 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-12.csv - Rows: 86400 | Raw events: 710836 | Clean events: 710836
-2026-09-05 17:01:04,779 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-13.csv
-2026-09-05 17:01:07,227 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-13.csv - Rows: 86400 | Raw events: 1066741 | Clean events: 1066741
-2026-09-05 17:01:07,227 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-14.csv
-2026-09-05 17:01:09,257 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-14.csv - Rows: 86400 | Raw events: 787083 | Clean events: 787083
-2026-09-05 17:01:09,257 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-15.csv
-2026-09-05 17:01:11,262 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-15.csv - Rows: 86400 | Raw events: 817704 | Clean events: 817704
-2026-09-05 17:01:11,262 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-16.csv
-2026-09-05 17:01:13,682 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-16.csv - Rows: 86399 | Raw events: 1109475 | Clean events: 1109475
-2026-09-05 17:01:13,682 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-17.csv
-2026-09-05 17:01:15,941 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-17.csv - Rows: 86400 | Raw events: 858666 | Clean events: 858666
-2026-09-05 17:01:15,941 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-18.csv
-2026-09-05 17:01:18,634 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-18.csv - Rows: 86400 | Raw events: 1165832 | Clean events: 1165832
-2026-09-05 17:01:18,634 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-19.csv
-2026-09-05 17:01:20,128 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-19.csv - Rows: 86400 | Raw events: 273927 | Clean events: 273927
-2026-09-05 17:01:20,129 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-20.csv
-2026-09-05 17:01:22,288 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-20.csv - Rows: 86400 | Raw events: 906813 | Clean events: 906813
-2026-09-05 17:01:22,288 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-21.csv
-2026-09-05 17:01:24,565 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-21.csv - Rows: 86400 | Raw events: 984818 | Clean events: 984818
-2026-09-05 17:01:24,565 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-22.csv
-2026-09-05 17:01:26,368 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-22.csv - Rows: 86400 | Raw events: 637814 | Clean events: 637814
-2026-09-05 17:01:26,368 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-23.csv
-2026-09-05 17:01:28,578 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-23.csv - Rows: 86399 | Raw events: 973777 | Clean events: 973777
-2026-09-05 17:01:28,578 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-24.csv
-2026-09-05 17:01:30,252 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-24.csv - Rows: 86400 | Raw events: 559672 | Clean events: 559672
-2026-09-05 17:01:30,252 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-25.csv
-2026-09-05 17:01:32,254 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-25.csv - Rows: 86400 | Raw events: 928838 | Clean events: 928838
-2026-09-05 17:01:32,254 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-26.csv
-2026-09-05 17:01:34,394 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-26.csv - Rows: 86400 | Raw events: 1020248 | Clean events: 1020248
-2026-09-05 17:01:34,394 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-27.csv
-2026-09-05 17:01:36,318 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-27.csv - Rows: 86367 | Raw events: 761629 | Clean events: 761628
-2026-09-05 17:01:36,318 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-28.csv
-2026-09-05 17:01:38,234 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-28.csv - Rows: 86400 | Raw events: 806785 | Clean events: 806785
-2026-09-05 17:01:38,234 - INFO - Processing zip: data/raw/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03.zip
-2026-09-05 17:01:38,235 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-01.csv
-2026-09-05 17:01:38,236 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-01.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,236 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-02.csv
-2026-09-05 17:01:38,236 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-02.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,236 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-03.csv
-2026-09-05 17:01:38,237 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-03.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,237 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-04.csv
-2026-09-05 17:01:38,237 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-04.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,237 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-05.csv
-2026-09-05 17:01:38,238 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-05.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,238 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-06.csv
-2026-09-05 17:01:38,238 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-06.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,238 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-07.csv
-2026-09-05 17:01:38,238 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-07.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,239 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-08.csv
-2026-09-05 17:01:38,239 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-08.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,239 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-09.csv
-2026-09-05 17:01:38,239 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-09.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,239 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-10.csv
-2026-09-05 17:01:38,240 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-10.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,240 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-11.csv
-2026-09-05 17:01:38,240 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-11.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,240 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-12.csv
-2026-09-05 17:01:38,241 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-12.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,241 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-13.csv
-2026-09-05 17:01:38,241 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-13.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,241 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-14.csv
-2026-09-05 17:01:38,242 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-14.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,242 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-15.csv
-2026-09-05 17:01:38,242 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-15.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,242 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-16.csv
-2026-09-05 17:01:38,243 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-16.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,243 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-17.csv
-2026-09-05 17:01:38,243 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-17.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,243 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-18.csv
-2026-09-05 17:01:38,243 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-18.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,243 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-19.csv
-2026-09-05 17:01:38,244 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-19.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,244 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-20.csv
-2026-09-05 17:01:38,244 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-20.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,244 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-21.csv
-2026-09-05 17:01:38,245 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-21.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,245 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-22.csv
-2026-09-05 17:01:38,245 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-22.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,245 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-23.csv
-2026-09-05 17:01:38,246 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-23.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,246 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-24.csv
-2026-09-05 17:01:38,246 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-24.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,246 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-25.csv
-2026-09-05 17:01:38,246 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-25.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,246 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-26.csv
-2026-09-05 17:01:38,247 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-26.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,247 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-27.csv
-2026-09-05 17:01:38,247 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-27.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,247 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-28.csv
-2026-09-05 17:01:38,248 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-28.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,248 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-29.csv
-2026-09-05 17:01:38,248 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-29.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,248 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-30.csv
-2026-09-05 17:01:38,248 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-30.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,248 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-31.csv
-2026-09-05 17:01:38,249 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-31.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:01:38,249 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-01.csv
-2026-09-05 17:01:40,260 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-01.csv - Rows: 86400 | Raw events: 885491 | Clean events: 885491
-2026-09-05 17:01:40,260 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-02.csv
-2026-09-05 17:01:41,897 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-02.csv - Rows: 86400 | Raw events: 617523 | Clean events: 617523
-2026-09-05 17:01:41,897 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-03.csv
-2026-09-05 17:01:43,746 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-03.csv - Rows: 86400 | Raw events: 761964 | Clean events: 761964
-2026-09-05 17:01:43,746 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-04.csv
-2026-09-05 17:01:45,211 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-04.csv - Rows: 86400 | Raw events: 439237 | Clean events: 439237
-2026-09-05 17:01:45,211 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-05.csv
-2026-09-05 17:01:47,481 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-05.csv - Rows: 86399 | Raw events: 933089 | Clean events: 933053
-2026-09-05 17:01:47,481 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-06.csv
-2026-09-05 17:01:49,153 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-06.csv - Rows: 86400 | Raw events: 497332 | Clean events: 497332
-2026-09-05 17:01:49,154 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-07.csv
-2026-09-05 17:01:51,234 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-07.csv - Rows: 86400 | Raw events: 889871 | Clean events: 889871
-2026-09-05 17:01:51,234 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-08.csv
-2026-09-05 17:01:53,118 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-08.csv - Rows: 86400 | Raw events: 701137 | Clean events: 701137
-2026-09-05 17:01:53,118 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-09.csv
-2026-09-05 17:01:54,451 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-09.csv - Rows: 86400 | Raw events: 238459 | Clean events: 238459
-2026-09-05 17:01:54,451 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-10.csv
-2026-09-05 17:01:55,223 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-10.csv - Rows: 57680 | Raw events: 10662 | Clean events: 10662
-2026-09-05 17:01:55,223 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-11.csv
-2026-09-05 17:01:56,202 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-11.csv - Rows: 83742 | Raw events: 928 | Clean events: 928
-2026-09-05 17:01:56,202 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-12.csv
-2026-09-05 17:01:57,331 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-12.csv - Rows: 86400 | Raw events: 71320 | Clean events: 71320
-2026-09-05 17:01:57,331 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-13.csv
-2026-09-05 17:01:58,608 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-13.csv - Rows: 86400 | Raw events: 287581 | Clean events: 287545
-2026-09-05 17:01:58,608 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-14.csv
-2026-09-05 17:01:59,946 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-14.csv - Rows: 86399 | Raw events: 209441 | Clean events: 209441
-2026-09-05 17:01:59,946 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-15.csv
-2026-09-05 17:02:01,152 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-15.csv - Rows: 86400 | Raw events: 96877 | Clean events: 96877
-2026-09-05 17:02:01,152 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-16.csv
-2026-09-05 17:02:02,259 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-16.csv - Rows: 86400 | Raw events: 0 | Clean events: 0
-2026-09-05 17:02:02,259 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-17.csv
-2026-09-05 17:02:03,382 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-17.csv - Rows: 86400 | Raw events: 655 | Clean events: 619
-2026-09-05 17:02:03,382 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-18.csv
-2026-09-05 17:02:04,707 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-18.csv - Rows: 86316 | Raw events: 389958 | Clean events: 389634
-2026-09-05 17:02:04,707 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-19.csv
-2026-09-05 17:02:05,950 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-19.csv - Rows: 85157 | Raw events: 237315 | Clean events: 236595
-2026-09-05 17:02:05,950 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-20.csv
-2026-09-05 17:02:07,197 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-20.csv - Rows: 86400 | Raw events: 277774 | Clean events: 277774
-2026-09-05 17:02:07,197 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-21.csv
-2026-09-05 17:02:08,431 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-21.csv - Rows: 86400 | Raw events: 254279 | Clean events: 254279
-2026-09-05 17:02:08,431 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-22.csv
-2026-09-05 17:02:09,707 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-22.csv - Rows: 86400 | Raw events: 443650 | Clean events: 443650
-2026-09-05 17:02:09,707 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-23.csv
-2026-09-05 17:02:11,084 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-23.csv - Rows: 86331 | Raw events: 511767 | Clean events: 511371
-2026-09-05 17:02:11,084 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-24.csv
-2026-09-05 17:02:12,561 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-24.csv - Rows: 86400 | Raw events: 835325 | Clean events: 835325
-2026-09-05 17:02:12,561 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-25.csv
-2026-09-05 17:02:13,967 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-25.csv - Rows: 86366 | Raw events: 326358 | Clean events: 326322
-2026-09-05 17:02:13,967 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-26.csv
-2026-09-05 17:02:15,323 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-26.csv - Rows: 86361 | Raw events: 224970 | Clean events: 224957
-2026-09-05 17:02:15,323 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-27.csv
-2026-09-05 17:02:16,658 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-27.csv - Rows: 86400 | Raw events: 401568 | Clean events: 401568
-2026-09-05 17:02:16,658 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-28.csv
-2026-09-05 17:02:18,037 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-28.csv - Rows: 86298 | Raw events: 339677 | Clean events: 339641
-2026-09-05 17:02:18,037 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-29.csv
-2026-09-05 17:02:19,478 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-29.csv - Rows: 82800 | Raw events: 56584 | Clean events: 56548
-2026-09-05 17:02:19,478 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-30.csv
-2026-09-05 17:02:20,902 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-30.csv - Rows: 86400 | Raw events: 209903 | Clean events: 209903
-2026-09-05 17:02:20,902 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-31.csv
-2026-09-05 17:02:22,301 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-31.csv - Rows: 86322 | Raw events: 275444 | Clean events: 275408
-2026-09-05 17:02:22,302 - INFO - Processing zip: data/raw/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04.zip
-2026-09-05 17:02:22,302 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-01.csv
-2026-09-05 17:02:22,303 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-01.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,303 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-02.csv
-2026-09-05 17:02:22,303 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-02.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,303 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-03.csv
-2026-09-05 17:02:22,304 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-03.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,304 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-04.csv
-2026-09-05 17:02:22,304 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-04.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,304 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-05.csv
-2026-09-05 17:02:22,305 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-05.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,305 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-06.csv
-2026-09-05 17:02:22,305 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-06.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,305 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-07.csv
-2026-09-05 17:02:22,305 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-07.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,305 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-08.csv
-2026-09-05 17:02:22,306 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-08.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,306 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-09.csv
-2026-09-05 17:02:22,306 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-09.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,306 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-10.csv
-2026-09-05 17:02:22,307 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-10.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,307 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-11.csv
-2026-09-05 17:02:22,307 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-11.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,307 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-12.csv
-2026-09-05 17:02:22,308 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-12.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,308 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-13.csv
-2026-09-05 17:02:22,308 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-13.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,308 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-14.csv
-2026-09-05 17:02:22,309 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-14.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,309 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-15.csv
-2026-09-05 17:02:22,309 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-15.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,309 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-16.csv
-2026-09-05 17:02:22,309 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-16.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,309 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-17.csv
-2026-09-05 17:02:22,310 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-17.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,310 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-18.csv
-2026-09-05 17:02:22,310 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-18.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,310 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-19.csv
-2026-09-05 17:02:22,311 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-19.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,311 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-20.csv
-2026-09-05 17:02:22,311 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-20.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,311 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-21.csv
-2026-09-05 17:02:22,311 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-21.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,311 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-22.csv
-2026-09-05 17:02:22,312 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-22.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,312 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-23.csv
-2026-09-05 17:02:22,312 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-23.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,312 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-24.csv
-2026-09-05 17:02:22,313 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-24.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,313 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-25.csv
-2026-09-05 17:02:22,313 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-25.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,313 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-26.csv
-2026-09-05 17:02:22,313 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-26.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,313 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-27.csv
-2026-09-05 17:02:22,314 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-27.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,314 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-28.csv
-2026-09-05 17:02:22,314 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-28.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,314 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-29.csv
-2026-09-05 17:02:22,314 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-29.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,314 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-30.csv
-2026-09-05 17:02:22,315 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-30.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
-2026-09-05 17:02:22,315 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-01.csv
-2026-09-05 17:02:24,061 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-01.csv - Rows: 86369 | Raw events: 681706 | Clean events: 681706
-2026-09-05 17:02:24,061 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-02.csv
-2026-09-05 17:02:25,750 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-02.csv - Rows: 86400 | Raw events: 620305 | Clean events: 620305
-2026-09-05 17:02:25,750 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-03.csv
-2026-09-05 17:02:28,058 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-03.csv - Rows: 86400 | Raw events: 1137204 | Clean events: 1137204
-2026-09-05 17:02:28,058 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-04.csv
-2026-09-05 17:02:29,973 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-04.csv - Rows: 86400 | Raw events: 740853 | Clean events: 740853
-2026-09-05 17:02:29,973 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-05.csv
-2026-09-05 17:02:31,854 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-05.csv - Rows: 86400 | Raw events: 656626 | Clean events: 656626
-2026-09-05 17:02:31,854 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-06.csv
-2026-09-05 17:02:33,600 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-06.csv - Rows: 86400 | Raw events: 696147 | Clean events: 696147
-2026-09-05 17:02:33,601 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-07.csv
-2026-09-05 17:02:35,547 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-07.csv - Rows: 86399 | Raw events: 693149 | Clean events: 693149
-2026-09-05 17:02:35,547 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-08.csv
-2026-09-05 17:02:37,592 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-08.csv - Rows: 85575 | Raw events: 775183 | Clean events: 775183
-2026-09-05 17:02:37,592 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-09.csv
-2026-09-05 17:02:39,479 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-09.csv - Rows: 86400 | Raw events: 591996 | Clean events: 591996
-2026-09-05 17:02:39,480 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-10.csv
-2026-09-05 17:02:41,331 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-10.csv - Rows: 86400 | Raw events: 486691 | Clean events: 486691
-2026-09-05 17:02:41,331 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-11.csv
-2026-09-05 17:02:43,038 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-11.csv - Rows: 86400 | Raw events: 536464 | Clean events: 536464
-2026-09-05 17:02:43,038 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-12.csv
-2026-09-05 17:02:45,321 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-12.csv - Rows: 86400 | Raw events: 806806 | Clean events: 806806
-2026-09-05 17:02:45,321 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-13.csv
-2026-09-05 17:02:47,345 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-13.csv - Rows: 86339 | Raw events: 658107 | Clean events: 658071
-2026-09-05 17:02:47,345 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-14.csv
-2026-09-05 17:02:48,858 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-14.csv - Rows: 86400 | Raw events: 381303 | Clean events: 381303
-2026-09-05 17:02:48,858 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-15.csv
-2026-09-05 17:02:50,492 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-15.csv - Rows: 86400 | Raw events: 508272 | Clean events: 508272
-2026-09-05 17:02:50,492 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-16.csv
-2026-09-05 17:02:52,221 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-16.csv - Rows: 86400 | Raw events: 654969 | Clean events: 654969
-2026-09-05 17:02:52,221 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-17.csv
-2026-09-05 17:02:54,410 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-17.csv - Rows: 86400 | Raw events: 509988 | Clean events: 509988
-2026-09-05 17:02:54,411 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-18.csv
-2026-09-05 17:02:57,442 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-18.csv - Rows: 86340 | Raw events: 1140540 | Clean events: 1140518
-2026-09-05 17:02:57,442 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-19.csv
-2026-09-05 17:02:59,747 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-19.csv - Rows: 86400 | Raw events: 718327 | Clean events: 718291
-2026-09-05 17:02:59,747 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-20.csv
-2026-09-05 17:03:02,626 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-20.csv - Rows: 86399 | Raw events: 1130186 | Clean events: 1130186
-2026-09-05 17:03:02,626 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-21.csv
-2026-09-05 17:03:05,346 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-21.csv - Rows: 86400 | Raw events: 1013120 | Clean events: 1013120
-2026-09-05 17:03:05,346 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-22.csv
-2026-09-05 17:03:08,280 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-22.csv - Rows: 86400 | Raw events: 1182730 | Clean events: 1182730
-2026-09-05 17:03:08,280 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-23.csv
-2026-09-05 17:03:11,026 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-23.csv - Rows: 86363 | Raw events: 866535 | Clean events: 866499
-2026-09-05 17:03:11,026 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-24.csv
-2026-09-05 17:03:13,824 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-24.csv - Rows: 86400 | Raw events: 1097380 | Clean events: 1097380
-2026-09-05 17:03:13,824 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-25.csv
-2026-09-05 17:03:16,300 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-25.csv - Rows: 86364 | Raw events: 786780 | Clean events: 786744
-2026-09-05 17:03:16,300 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-26.csv
-2026-09-05 17:03:18,691 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-26.csv - Rows: 86400 | Raw events: 721000 | Clean events: 721000
-2026-09-05 17:03:18,691 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-27.csv
-2026-09-05 17:03:20,120 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-27.csv - Rows: 86400 | Raw events: 3249 | Clean events: 3249
-2026-09-05 17:03:20,120 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-28.csv
-2026-09-05 17:03:21,557 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-28.csv - Rows: 86400 | Raw events: 21503 | Clean events: 21503
-2026-09-05 17:03:21,557 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-29.csv
-2026-09-05 17:03:24,075 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-29.csv - Rows: 86400 | Raw events: 809296 | Clean events: 809296
-2026-09-05 17:03:24,075 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-30.csv
-2026-09-05 17:03:27,181 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-30.csv - Rows: 86399 | Raw events: 1205696 | Clean events: 1205696
-2026-09-05 17:03:27,234 - INFO - Pipeline completed successfully
+2026-09-06 21:18:01,285 - INFO - Pipeline started
+2026-09-06 21:18:01,285 - INFO - Processing zip: data/raw/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02.zip
+2026-09-06 21:18:01,286 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-01.csv
+2026-09-06 21:18:01,290 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-01.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,291 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-02.csv
+2026-09-06 21:18:01,291 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-02.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,291 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-03.csv
+2026-09-06 21:18:01,292 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-03.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,292 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-04.csv
+2026-09-06 21:18:01,292 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-04.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,292 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-05.csv
+2026-09-06 21:18:01,292 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-05.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,292 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-06.csv
+2026-09-06 21:18:01,293 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-06.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,293 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-07.csv
+2026-09-06 21:18:01,293 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-07.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,293 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-08.csv
+2026-09-06 21:18:01,294 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-08.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,294 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-09.csv
+2026-09-06 21:18:01,294 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-09.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,294 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-10.csv
+2026-09-06 21:18:01,295 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-10.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,295 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-11.csv
+2026-09-06 21:18:01,295 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-11.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,295 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-12.csv
+2026-09-06 21:18:01,296 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-12.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,296 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-13.csv
+2026-09-06 21:18:01,296 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-13.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,296 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-14.csv
+2026-09-06 21:18:01,296 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-14.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,296 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-15.csv
+2026-09-06 21:18:01,297 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-15.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,297 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-16.csv
+2026-09-06 21:18:01,298 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-16.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,298 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-17.csv
+2026-09-06 21:18:01,298 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-17.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,298 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-18.csv
+2026-09-06 21:18:01,299 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-18.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,299 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-19.csv
+2026-09-06 21:18:01,301 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-19.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,301 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-20.csv
+2026-09-06 21:18:01,301 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-20.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,301 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-21.csv
+2026-09-06 21:18:01,302 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-21.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,302 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-22.csv
+2026-09-06 21:18:01,302 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-22.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,303 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-23.csv
+2026-09-06 21:18:01,303 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-23.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,303 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-24.csv
+2026-09-06 21:18:01,304 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-24.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,304 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-25.csv
+2026-09-06 21:18:01,304 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-25.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,304 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-26.csv
+2026-09-06 21:18:01,305 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-26.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,305 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-27.csv
+2026-09-06 21:18:01,306 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-27.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,306 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-28.csv
+2026-09-06 21:18:01,306 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-28.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:01,306 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-01.csv
+2026-09-06 21:18:03,325 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-01.csv - Rows: 86399 | Raw events: 765711 | Clean events: 765711
+2026-09-06 21:18:03,325 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-02.csv
+2026-09-06 21:18:05,601 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-02.csv - Rows: 86399 | Raw events: 998934 | Clean events: 998934
+2026-09-06 21:18:05,601 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-03.csv
+2026-09-06 21:18:07,285 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-03.csv - Rows: 86400 | Raw events: 525617 | Clean events: 525617
+2026-09-06 21:18:07,285 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-04.csv
+2026-09-06 21:18:08,676 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-04.csv - Rows: 58771 | Raw events: 522975 | Clean events: 522975
+2026-09-06 21:18:08,676 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-05.csv
+2026-09-06 21:18:09,965 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-05.csv - Rows: 86356 | Raw events: 89050 | Clean events: 88942
+2026-09-06 21:18:09,965 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-06.csv
+2026-09-06 21:18:11,689 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-06.csv - Rows: 86399 | Raw events: 589311 | Clean events: 589311
+2026-09-06 21:18:11,689 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-07.csv
+2026-09-06 21:18:13,142 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-07.csv - Rows: 86400 | Raw events: 409383 | Clean events: 409383
+2026-09-06 21:18:13,142 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-08.csv
+2026-09-06 21:18:15,643 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-08.csv - Rows: 86400 | Raw events: 1112826 | Clean events: 1112826
+2026-09-06 21:18:15,644 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-09.csv
+2026-09-06 21:18:17,810 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-09.csv - Rows: 86400 | Raw events: 878430 | Clean events: 878430
+2026-09-06 21:18:17,810 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-10.csv
+2026-09-06 21:18:20,242 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-10.csv - Rows: 86400 | Raw events: 1128132 | Clean events: 1128132
+2026-09-06 21:18:20,242 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-11.csv
+2026-09-06 21:18:22,031 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-11.csv - Rows: 86161 | Raw events: 481735 | Clean events: 481735
+2026-09-06 21:18:22,031 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-12.csv
+2026-09-06 21:18:24,143 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-12.csv - Rows: 86400 | Raw events: 710836 | Clean events: 710836
+2026-09-06 21:18:24,143 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-13.csv
+2026-09-06 21:18:26,486 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-13.csv - Rows: 86400 | Raw events: 1066741 | Clean events: 1066741
+2026-09-06 21:18:26,487 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-14.csv
+2026-09-06 21:18:28,529 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-14.csv - Rows: 86400 | Raw events: 787083 | Clean events: 787083
+2026-09-06 21:18:28,529 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-15.csv
+2026-09-06 21:18:30,603 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-15.csv - Rows: 86400 | Raw events: 817704 | Clean events: 817704
+2026-09-06 21:18:30,604 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-16.csv
+2026-09-06 21:18:33,027 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-16.csv - Rows: 86399 | Raw events: 1109475 | Clean events: 1109475
+2026-09-06 21:18:33,027 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-17.csv
+2026-09-06 21:18:35,201 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-17.csv - Rows: 86400 | Raw events: 858666 | Clean events: 858666
+2026-09-06 21:18:35,201 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-18.csv
+2026-09-06 21:18:37,865 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-18.csv - Rows: 86400 | Raw events: 1165832 | Clean events: 1165832
+2026-09-06 21:18:37,865 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-19.csv
+2026-09-06 21:18:39,335 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-19.csv - Rows: 86400 | Raw events: 273927 | Clean events: 273927
+2026-09-06 21:18:39,336 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-20.csv
+2026-09-06 21:18:41,552 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-20.csv - Rows: 86400 | Raw events: 906813 | Clean events: 906813
+2026-09-06 21:18:41,552 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-21.csv
+2026-09-06 21:18:43,859 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-21.csv - Rows: 86400 | Raw events: 984818 | Clean events: 984818
+2026-09-06 21:18:43,859 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-22.csv
+2026-09-06 21:18:45,690 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-22.csv - Rows: 86400 | Raw events: 637814 | Clean events: 637814
+2026-09-06 21:18:45,690 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-23.csv
+2026-09-06 21:18:47,953 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-23.csv - Rows: 86399 | Raw events: 973777 | Clean events: 973777
+2026-09-06 21:18:47,953 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-24.csv
+2026-09-06 21:18:49,611 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-24.csv - Rows: 86400 | Raw events: 559672 | Clean events: 559672
+2026-09-06 21:18:49,611 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-25.csv
+2026-09-06 21:18:51,617 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-25.csv - Rows: 86400 | Raw events: 928838 | Clean events: 928838
+2026-09-06 21:18:51,617 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-26.csv
+2026-09-06 21:18:53,768 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-26.csv - Rows: 86400 | Raw events: 1020248 | Clean events: 1020248
+2026-09-06 21:18:53,768 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-27.csv
+2026-09-06 21:18:55,712 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-27.csv - Rows: 86367 | Raw events: 761629 | Clean events: 761628
+2026-09-06 21:18:55,713 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-28.csv
+2026-09-06 21:18:57,707 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-02-28.csv - Rows: 86400 | Raw events: 806785 | Clean events: 806785
+2026-09-06 21:18:57,707 - INFO - Processing zip: data/raw/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03.zip
+2026-09-06 21:18:57,708 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-01.csv
+2026-09-06 21:18:57,709 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-01.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,709 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-02.csv
+2026-09-06 21:18:57,709 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-02.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,709 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-03.csv
+2026-09-06 21:18:57,710 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-03.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,710 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-04.csv
+2026-09-06 21:18:57,710 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-04.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,710 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-05.csv
+2026-09-06 21:18:57,711 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-05.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,711 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-06.csv
+2026-09-06 21:18:57,711 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-06.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,711 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-07.csv
+2026-09-06 21:18:57,712 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-07.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,712 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-08.csv
+2026-09-06 21:18:57,712 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-08.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,712 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-09.csv
+2026-09-06 21:18:57,713 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-09.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,713 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-10.csv
+2026-09-06 21:18:57,713 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-10.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,713 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-11.csv
+2026-09-06 21:18:57,714 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-11.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,714 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-12.csv
+2026-09-06 21:18:57,714 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-12.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,714 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-13.csv
+2026-09-06 21:18:57,715 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-13.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,715 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-14.csv
+2026-09-06 21:18:57,715 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-14.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,715 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-15.csv
+2026-09-06 21:18:57,716 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-15.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,716 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-16.csv
+2026-09-06 21:18:57,716 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-16.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,716 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-17.csv
+2026-09-06 21:18:57,717 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-17.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,717 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-18.csv
+2026-09-06 21:18:57,717 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-18.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,717 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-19.csv
+2026-09-06 21:18:57,717 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-19.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,718 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-20.csv
+2026-09-06 21:18:57,718 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-20.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,718 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-21.csv
+2026-09-06 21:18:57,719 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-21.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,719 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-22.csv
+2026-09-06 21:18:57,720 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-22.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,720 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-23.csv
+2026-09-06 21:18:57,720 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-23.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,720 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-24.csv
+2026-09-06 21:18:57,721 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-24.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,721 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-25.csv
+2026-09-06 21:18:57,721 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-25.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,721 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-26.csv
+2026-09-06 21:18:57,721 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-26.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,721 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-27.csv
+2026-09-06 21:18:57,722 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-27.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,722 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-28.csv
+2026-09-06 21:18:57,722 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-28.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,722 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-29.csv
+2026-09-06 21:18:57,723 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-29.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,723 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-30.csv
+2026-09-06 21:18:57,723 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-30.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,723 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-31.csv
+2026-09-06 21:18:57,724 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-31.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:18:57,724 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-01.csv
+2026-09-06 21:18:59,769 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-01.csv - Rows: 86400 | Raw events: 885491 | Clean events: 885491
+2026-09-06 21:18:59,769 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-02.csv
+2026-09-06 21:19:01,521 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-02.csv - Rows: 86400 | Raw events: 617523 | Clean events: 617523
+2026-09-06 21:19:01,521 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-03.csv
+2026-09-06 21:19:03,489 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-03.csv - Rows: 86400 | Raw events: 761964 | Clean events: 761964
+2026-09-06 21:19:03,489 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-04.csv
+2026-09-06 21:19:05,052 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-04.csv - Rows: 86400 | Raw events: 439237 | Clean events: 439237
+2026-09-06 21:19:05,052 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-05.csv
+2026-09-06 21:19:07,489 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-05.csv - Rows: 86399 | Raw events: 933089 | Clean events: 933053
+2026-09-06 21:19:07,489 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-06.csv
+2026-09-06 21:19:09,221 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-06.csv - Rows: 86400 | Raw events: 497332 | Clean events: 497332
+2026-09-06 21:19:09,221 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-07.csv
+2026-09-06 21:19:11,436 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-07.csv - Rows: 86400 | Raw events: 889871 | Clean events: 889871
+2026-09-06 21:19:11,436 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-08.csv
+2026-09-06 21:19:13,583 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-08.csv - Rows: 86400 | Raw events: 701137 | Clean events: 701137
+2026-09-06 21:19:13,583 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-09.csv
+2026-09-06 21:19:15,039 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-09.csv - Rows: 86400 | Raw events: 238459 | Clean events: 238459
+2026-09-06 21:19:15,039 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-10.csv
+2026-09-06 21:19:15,909 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-10.csv - Rows: 57680 | Raw events: 10662 | Clean events: 10662
+2026-09-06 21:19:15,910 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-11.csv
+2026-09-06 21:19:16,995 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-11.csv - Rows: 83742 | Raw events: 928 | Clean events: 928
+2026-09-06 21:19:16,995 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-12.csv
+2026-09-06 21:19:18,249 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-12.csv - Rows: 86400 | Raw events: 71320 | Clean events: 71320
+2026-09-06 21:19:18,249 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-13.csv
+2026-09-06 21:19:19,608 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-13.csv - Rows: 86400 | Raw events: 287581 | Clean events: 287545
+2026-09-06 21:19:19,609 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-14.csv
+2026-09-06 21:19:20,902 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-14.csv - Rows: 86399 | Raw events: 209441 | Clean events: 209441
+2026-09-06 21:19:20,902 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-15.csv
+2026-09-06 21:19:22,191 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-15.csv - Rows: 86400 | Raw events: 96877 | Clean events: 96877
+2026-09-06 21:19:22,192 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-16.csv
+2026-09-06 21:19:23,377 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-16.csv - Rows: 86400 | Raw events: 0 | Clean events: 0
+2026-09-06 21:19:23,377 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-17.csv
+2026-09-06 21:19:24,701 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-17.csv - Rows: 86400 | Raw events: 655 | Clean events: 619
+2026-09-06 21:19:24,701 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-18.csv
+2026-09-06 21:19:26,512 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-18.csv - Rows: 86316 | Raw events: 389958 | Clean events: 389634
+2026-09-06 21:19:26,513 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-19.csv
+2026-09-06 21:19:28,056 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-19.csv - Rows: 85157 | Raw events: 237315 | Clean events: 236595
+2026-09-06 21:19:28,056 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-20.csv
+2026-09-06 21:19:29,402 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-20.csv - Rows: 86400 | Raw events: 277774 | Clean events: 277774
+2026-09-06 21:19:29,402 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-21.csv
+2026-09-06 21:19:30,776 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-21.csv - Rows: 86400 | Raw events: 254279 | Clean events: 254279
+2026-09-06 21:19:30,776 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-22.csv
+2026-09-06 21:19:32,149 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-22.csv - Rows: 86400 | Raw events: 443650 | Clean events: 443650
+2026-09-06 21:19:32,149 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-23.csv
+2026-09-06 21:19:33,683 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-23.csv - Rows: 86331 | Raw events: 511767 | Clean events: 511371
+2026-09-06 21:19:33,683 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-24.csv
+2026-09-06 21:19:35,231 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-24.csv - Rows: 86400 | Raw events: 835325 | Clean events: 835325
+2026-09-06 21:19:35,231 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-25.csv
+2026-09-06 21:19:36,608 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-25.csv - Rows: 86366 | Raw events: 326358 | Clean events: 326322
+2026-09-06 21:19:36,608 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-26.csv
+2026-09-06 21:19:37,918 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-26.csv - Rows: 86361 | Raw events: 224970 | Clean events: 224957
+2026-09-06 21:19:37,918 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-27.csv
+2026-09-06 21:19:39,265 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-27.csv - Rows: 86400 | Raw events: 401568 | Clean events: 401568
+2026-09-06 21:19:39,265 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-28.csv
+2026-09-06 21:19:40,671 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-28.csv - Rows: 86298 | Raw events: 339677 | Clean events: 339641
+2026-09-06 21:19:40,671 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-29.csv
+2026-09-06 21:19:42,049 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-29.csv - Rows: 82800 | Raw events: 56584 | Clean events: 56548
+2026-09-06 21:19:42,049 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-30.csv
+2026-09-06 21:19:43,342 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-30.csv - Rows: 86400 | Raw events: 209903 | Clean events: 209903
+2026-09-06 21:19:43,342 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-31.csv
+2026-09-06 21:19:44,687 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-03-31.csv - Rows: 86322 | Raw events: 275444 | Clean events: 275408
+2026-09-06 21:19:44,687 - INFO - Processing zip: data/raw/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04.zip
+2026-09-06 21:19:44,688 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-01.csv
+2026-09-06 21:19:44,688 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-01.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,688 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-02.csv
+2026-09-06 21:19:44,689 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-02.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,689 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-03.csv
+2026-09-06 21:19:44,689 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-03.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,689 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-04.csv
+2026-09-06 21:19:44,690 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-04.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,690 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-05.csv
+2026-09-06 21:19:44,690 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-05.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,690 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-06.csv
+2026-09-06 21:19:44,691 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-06.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,691 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-07.csv
+2026-09-06 21:19:44,691 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-07.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,691 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-08.csv
+2026-09-06 21:19:44,692 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-08.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,692 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-09.csv
+2026-09-06 21:19:44,692 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-09.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,692 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-10.csv
+2026-09-06 21:19:44,693 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-10.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,693 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-11.csv
+2026-09-06 21:19:44,693 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-11.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,693 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-12.csv
+2026-09-06 21:19:44,693 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-12.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,693 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-13.csv
+2026-09-06 21:19:44,694 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-13.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,694 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-14.csv
+2026-09-06 21:19:44,694 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-14.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,694 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-15.csv
+2026-09-06 21:19:44,695 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-15.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,695 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-16.csv
+2026-09-06 21:19:44,695 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-16.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,695 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-17.csv
+2026-09-06 21:19:44,695 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-17.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,695 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-18.csv
+2026-09-06 21:19:44,696 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-18.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,696 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-19.csv
+2026-09-06 21:19:44,696 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-19.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,696 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-20.csv
+2026-09-06 21:19:44,697 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-20.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,697 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-21.csv
+2026-09-06 21:19:44,697 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-21.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,697 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-22.csv
+2026-09-06 21:19:44,697 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-22.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,697 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-23.csv
+2026-09-06 21:19:44,698 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-23.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,698 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-24.csv
+2026-09-06 21:19:44,698 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-24.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,698 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-25.csv
+2026-09-06 21:19:44,699 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-25.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,699 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-26.csv
+2026-09-06 21:19:44,699 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-26.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,699 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-27.csv
+2026-09-06 21:19:44,700 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-27.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,700 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-28.csv
+2026-09-06 21:19:44,700 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-28.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,700 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-29.csv
+2026-09-06 21:19:44,700 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-29.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,701 - INFO - Processing file: __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-30.csv
+2026-09-06 21:19:44,701 - ERROR - Unable to process __MACOSX/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/._telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-30.csv - 'utf-8' codec can't decode byte 0xa2 in position 37: invalid start byte
+2026-09-06 21:19:44,701 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-01.csv
+2026-09-06 21:19:46,395 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-01.csv - Rows: 86369 | Raw events: 681706 | Clean events: 681706
+2026-09-06 21:19:46,395 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-02.csv
+2026-09-06 21:19:48,048 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-02.csv - Rows: 86400 | Raw events: 620305 | Clean events: 620305
+2026-09-06 21:19:48,048 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-03.csv
+2026-09-06 21:19:50,223 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-03.csv - Rows: 86400 | Raw events: 1137204 | Clean events: 1137204
+2026-09-06 21:19:50,224 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-04.csv
+2026-09-06 21:19:52,054 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-04.csv - Rows: 86400 | Raw events: 740853 | Clean events: 740853
+2026-09-06 21:19:52,054 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-05.csv
+2026-09-06 21:19:53,913 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-05.csv - Rows: 86400 | Raw events: 656626 | Clean events: 656626
+2026-09-06 21:19:53,914 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-06.csv
+2026-09-06 21:19:55,730 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-06.csv - Rows: 86400 | Raw events: 696147 | Clean events: 696147
+2026-09-06 21:19:55,730 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-07.csv
+2026-09-06 21:19:57,714 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-07.csv - Rows: 86399 | Raw events: 693149 | Clean events: 693149
+2026-09-06 21:19:57,714 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-08.csv
+2026-09-06 21:19:59,568 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-08.csv - Rows: 85575 | Raw events: 775183 | Clean events: 775183
+2026-09-06 21:19:59,568 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-09.csv
+2026-09-06 21:20:01,262 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-09.csv - Rows: 86400 | Raw events: 591996 | Clean events: 591996
+2026-09-06 21:20:01,262 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-10.csv
+2026-09-06 21:20:03,011 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-10.csv - Rows: 86400 | Raw events: 486691 | Clean events: 486691
+2026-09-06 21:20:03,012 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-11.csv
+2026-09-06 21:20:04,662 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-11.csv - Rows: 86400 | Raw events: 536464 | Clean events: 536464
+2026-09-06 21:20:04,662 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-12.csv
+2026-09-06 21:20:06,746 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-12.csv - Rows: 86400 | Raw events: 806806 | Clean events: 806806
+2026-09-06 21:20:06,746 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-13.csv
+2026-09-06 21:20:08,549 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-13.csv - Rows: 86339 | Raw events: 658107 | Clean events: 658071
+2026-09-06 21:20:08,549 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-14.csv
+2026-09-06 21:20:09,914 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-14.csv - Rows: 86400 | Raw events: 381303 | Clean events: 381303
+2026-09-06 21:20:09,915 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-15.csv
+2026-09-06 21:20:11,398 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-15.csv - Rows: 86400 | Raw events: 508272 | Clean events: 508272
+2026-09-06 21:20:11,398 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-16.csv
+2026-09-06 21:20:13,012 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-16.csv - Rows: 86400 | Raw events: 654969 | Clean events: 654969
+2026-09-06 21:20:13,012 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-17.csv
+2026-09-06 21:20:14,852 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-17.csv - Rows: 86400 | Raw events: 509988 | Clean events: 509988
+2026-09-06 21:20:14,852 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-18.csv
+2026-09-06 21:20:17,505 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-18.csv - Rows: 86340 | Raw events: 1140540 | Clean events: 1140518
+2026-09-06 21:20:17,505 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-19.csv
+2026-09-06 21:20:19,572 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-19.csv - Rows: 86400 | Raw events: 718327 | Clean events: 718291
+2026-09-06 21:20:19,572 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-20.csv
+2026-09-06 21:20:22,338 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-20.csv - Rows: 86399 | Raw events: 1130186 | Clean events: 1130186
+2026-09-06 21:20:22,338 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-21.csv
+2026-09-06 21:20:24,864 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-21.csv - Rows: 86400 | Raw events: 1013120 | Clean events: 1013120
+2026-09-06 21:20:24,864 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-22.csv
+2026-09-06 21:20:28,593 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-22.csv - Rows: 86400 | Raw events: 1182730 | Clean events: 1182730
+2026-09-06 21:20:28,593 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-23.csv
+2026-09-06 21:20:31,247 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-23.csv - Rows: 86363 | Raw events: 866535 | Clean events: 866499
+2026-09-06 21:20:31,247 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-24.csv
+2026-09-06 21:20:33,852 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-24.csv - Rows: 86400 | Raw events: 1097380 | Clean events: 1097380
+2026-09-06 21:20:33,852 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-25.csv
+2026-09-06 21:20:36,227 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-25.csv - Rows: 86364 | Raw events: 786780 | Clean events: 786744
+2026-09-06 21:20:36,227 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-26.csv
+2026-09-06 21:20:38,585 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-26.csv - Rows: 86400 | Raw events: 721000 | Clean events: 721000
+2026-09-06 21:20:38,585 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-27.csv
+2026-09-06 21:20:39,966 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-27.csv - Rows: 86400 | Raw events: 3249 | Clean events: 3249
+2026-09-06 21:20:39,966 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-28.csv
+2026-09-06 21:20:42,096 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-28.csv - Rows: 86400 | Raw events: 21503 | Clean events: 21503
+2026-09-06 21:20:42,096 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-29.csv
+2026-09-06 21:20:46,210 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-29.csv - Rows: 86400 | Raw events: 809296 | Clean events: 809296
+2026-09-06 21:20:46,210 - INFO - Processing file: telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-30.csv
+2026-09-06 21:20:53,139 - INFO - telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04/telemetry_MCC777eda3db57348ef8a3113a642ae74db_2026-04-30.csv - Rows: 86399 | Raw events: 1205696 | Clean events: 1205696
+2026-09-06 21:20:53,278 - INFO - Pipeline completed successfully
