@@ -319,7 +319,7 @@ context = coordinator.finalize(
     context
 )
 
-# Save context for BOT interface, removing heavy dataframes
+# Save context for BOT interface and remove heavy dataframes
 if "dataframe" in context: del context["dataframe"]
 if "events" in context: del context["events"]
 if "clean_events" in context: del context["clean_events"]
@@ -330,7 +330,6 @@ os.makedirs("data/processed", exist_ok=True)
 with open("data/processed/context.pkl", "wb") as f:
     pickle.dump(context, f)
 print("Context saved to data/processed/context.pkl for BOT interface.")
-
 
 
 
